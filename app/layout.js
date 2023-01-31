@@ -11,13 +11,14 @@ export default function RootLayout({ children }) {
           <nav>
             <div>
               <Link href="/">Home</Link>
-              <Link href="/animals">Animals</Link>
+              <Link href="/animals">Cart</Link>
+              <Link href="/animals">Checkout</Link>
             </div>
           </nav>
         </header>
         {children}
         <footer className={styles.footer}>
-          copyright animals4everyone 2023
+          copyright Sophie Zulinski 2023
         </footer>
       </body>
     </html>

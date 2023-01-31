@@ -3,7 +3,7 @@ import styles from './page.module.scss';
 export default function HomePage() {
   return (
     <>
-      <h1>HOME</h1>
+      <h1>Sophie's product page</h1>
       <main>
         <h2>image with next/image. width and height</h2>
         {/*
