@@ -1,19 +1,29 @@
 import Image from 'next/image';
-import pic07 from '../public/images/pic07.jpg';
-import styles from './page.module.scss';
+import Link from 'next/link';
+import { products } from '../database/products';
 
-export default function HomePage() {
+export default function Products() {
   return (
     <>
-      <h1>Sophie's product page HOME </h1>
+      <h1>Sophie's plant store</h1>
       <main>
-        <h2>We sell plants</h2>
-        {/*
-        This is a way of avoiding having to find
-        the width and height and writing them
-        manually in your JSX
-      */}
-        <Image className={styles.image} src={pic07} alt="pic07" />
+        {products.map((product) => {
+          return (
+            <div key={product.id}>
+              <Link href={`/products/${product.name.toLocaleLowerCase()}`}>
+                <h2>{product.name}</h2>
+              </Link>
+              <Link href={`/products/${product.name.toLocaleLowerCase()}`}>
+                <Image
+                  src={`/images/${product.name}-${product.id}.jpg`}
+                  alt={product.name}
+                  width="200"
+                  height="200"
+                />
+              </Link>
+            </div>
+          );
+        })}
       </main>
     </>
   );

@@ -2,10 +2,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { products } from '../../database/products';
 
-export default function AnimalsPage() {
+export default function Products() {
   return (
     <>
-      <h1>Products</h1>
+      <h1>Products SOPHIE</h1>
       <main>
         {products.map((product) => {
           return (
