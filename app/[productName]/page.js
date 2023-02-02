@@ -18,16 +18,16 @@ export default function Products({ params }) {
       <h1>{singleProduct.name}</h1>
       <main>
         <span>Quantity:</span>{' '}
-        <span attribute_name="data-test-id=`product-quantity`"> 1</span>
-        <div attribute_name="data-test-id=`product-price`">
+        <span htmlFor="data-test-id=`product-quantity`"> 1</span>
+        <div htmlFor="data-test-id=`product-price`">
           {singleProduct.price},- €
         </div>
-        <button attribute_name="data-test-id=`product-add-to-cart`">
+        <button htmlFor="data-test-id=`product-add-to-cart`">
           Add to cart
         </button>
         <br />
         <Image
-          attribute_name="data-test-id=`product-image`"
+          htmlFor="data-test-id=`product-image`"
           src={`/images/${singleProduct.name}-${singleProduct.id}.jpg`}
           alt={singleProduct.name}
           width="300"
