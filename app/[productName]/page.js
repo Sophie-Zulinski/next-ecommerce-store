@@ -17,10 +17,14 @@ export default function Products({ params }) {
     <>
       <h1>{singleProduct.name}</h1>
       <main>
-        <div attribute_name="data-test-id=`product-quantity`">1x</div>
+        <span>Quantity:</span>{' '}
+        <span attribute_name="data-test-id=`product-quantity`"> 1</span>
         <div attribute_name="data-test-id=`product-price`">
           {singleProduct.price},- €
         </div>
+        <button attribute_name="data-test-id=`product-add-to-cart`">
+          Add to cart
+        </button>
         <br />
         <Image
           attribute_name="data-test-id=`product-image`"

@@ -6,28 +6,10 @@ import styles from './page.module.scss';
 export default function Products() {
   return (
     <>
-      <h1>Sophie's plants store</h1>
+      <h1>Sophie's plant store</h1>
+
       <main className={styles.main}>
-        {products.map((product) => {
-          return (
-            <div key={product.id}>
-              <Link
-                attribute_name="data-test-id=`product-<product id>`"
-                href={`/${product.name.toLocaleLowerCase()}`}
-              >
-                <h2>{product.name}</h2>
-              </Link>
-              <Link href={`/${product.name.toLocaleLowerCase()}`}>
-                <Image
-                  src={`/images/${product.name}-${product.id}.jpg`}
-                  alt={product.name}
-                  width="300"
-                  height="458"
-                />
-              </Link>
-            </div>
-          );
-        })}
+        <Image src={`/images/gumtree-1.jpg`} width="300" height="458" />
       </main>
     </>
   );
