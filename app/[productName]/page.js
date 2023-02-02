@@ -1,12 +1,13 @@
 import Image from 'next/image';
 import { products } from '../../database/products';
+import ProductsCookie from './products';
 
 // export const products = [
 //   { id: 1, name: 'Gumtree', price: '5' },
 //  { id: 2, name: 'Lilac', price: '10' },
 // { id: 3, name: 'Succulents', price: '20' },
 // { id: 4, name: 'Poppy', price: '50' },
-//];
+//
 
 export default function Products({ params }) {
   const singleProduct = products.find((product) => {
@@ -33,6 +34,7 @@ export default function Products({ params }) {
           width="300"
           height="458"
         />
+        <ProductsCookie fruit={singleProduct} />
       </main>
     </>
   );
