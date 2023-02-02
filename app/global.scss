@@ -7,11 +7,17 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Dank Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo,
-    Courier, monospace;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
   font-size: 21px;
   color: var(--main-text-color);
   line-height: 1.5;
   margin: 0;
   background-color: #d8dbe2;
+
+  & a + a,
+  span + a {
+    margin-left: 13px;
+    text-decoration: none;
+  }
 }
