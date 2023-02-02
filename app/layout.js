@@ -10,12 +10,7 @@ export default function RootLayout({ children }) {
         <header className={styles.header}>
           <nav>
             <div>
-              <Link
-                attribute_name="data-test-id=`products-link`"
-                href="/products"
-              >
-                Products
-              </Link>
+              <Link href="/products">Products</Link>
               <Link href="/cart">Cart</Link>
               <Link href="/checkout">Checkout</Link>
             </div>
