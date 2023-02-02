@@ -27,10 +27,10 @@ export default function ProductsCookie(props) {
           // my fruit is not inside of the cookie
           if (foundFruit) {
             // update the cookie with the new values
-            foundFruit.stars--;
+            foundFruit.amount--;
             // if there is a negative value set number to 0
-            if (foundFruit.stars < 0) {
-              foundFruit.stars = 0;
+            if (foundFruit.amount < 0) {
+              foundFruit.amount = 0;
             }
             // Update the cookie after transformation
             setStringifiedCookie('fruitsCookie', fruitsInCookies);
@@ -61,7 +61,7 @@ export default function ProductsCookie(props) {
           // my fruit is inside of the cookie
           if (foundFruit) {
             // Add a start to the foundFruit
-            foundFruit.stars++;
+            foundFruit.amount++;
             // my fruit is not inside of the cookie
           } else {
             // Add a the fruit to the array of fruits in cookies

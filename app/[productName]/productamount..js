@@ -1,0 +1,47 @@
+import { cookies } from 'next/headers';
+import Link from 'next/link';
+import { fruits, products } from '../../database/products';
+
+export default function Productamount() {
+  // get the cookie from the server
+  const fruitsCookie = cookies().get('fruitsCookie');
+
+  // create a default value if cooke doesn't exist
+  let fruitsCookieParsed = [];
+
+  if (fruitsCookie) {
+    fruitsCookieParsed = JSON.parse(fruitsCookie.value);
+  }
+
+  const fruitsWithStars = products.map((fruit) => {
+    const fruitWithStars = { ...fruit, amount: 0 };
+
+    // i read the cookie and find the fruit
+    const fruitInCookie = fruitsCookieParsed.find(
+      (fruitObject) => fruit.id === fruitObject.id,
+    );
+
+    // if find the fruit i update the amount of stars
+    if (fruitInCookie) {
+      fruitWithStars.amount = fruitInCookie.amount;
+    }
+
+    return fruitWithStars;
+  });
+
+  return (
+    <div>
+      {fruitsWithStars.map((fruit) => {
+        return (
+          <div key={fruit.id}>
+            <Link href={`/fruits/${fruit.name.toLocaleLowerCase()}`}>
+              <h2>{fruit.name}</h2>
+              <p>{fruit.icon}</p>
+              <p>amount: {fruit.amount}</p>
+            </Link>
+          </div>
+        );
+      })}
+    </div>
+  );
+}

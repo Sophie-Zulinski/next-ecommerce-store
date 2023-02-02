@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { products } from '../../database/products';
+import Productamount from './productamount.';
 import ProductsCookie from './products';
 
 // export const products = [
@@ -35,6 +36,7 @@ export default function Products({ params }) {
           height="458"
         />
         <ProductsCookie fruit={singleProduct} />
+        <Productamount amount={singleProduct.amount} />
       </main>
     </>
   );
