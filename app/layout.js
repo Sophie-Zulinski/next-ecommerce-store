@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
         <header className={styles.header}>
           <nav>
             <div>
-              <Link href="/products">Products</Link>
+              <Link href="/">Home</Link>
               <Link href="/cart">Cart</Link>
               <Link href="/checkout">Checkout</Link>
             </div>
