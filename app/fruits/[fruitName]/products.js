@@ -11,7 +11,7 @@ export default function Fruit(props) {
         onClick={() => {
           // get the cookie
           const fruitsInCookies = getParsedCookie('fruitsCookie');
-          console.log('cart', fruitsInCookies);
+          console.log('fruitsname fruitsInCookies', fruitsInCookies);
           // if there is no cookie we initialize the value with a 1
           if (!fruitsInCookies) {
             // create the cookie with a new object for the fruit
