@@ -23,6 +23,7 @@ export default function FruitPage({ params }) {
     <>
       <h1>{singleFruit.name}</h1>
       <br />
+      {/*this is the input field for quantity*/}
       <span>Quantity (insert number):</span>{' '}
       <input
         htmlFor="data-test-id=`product-quantity`"
@@ -32,8 +33,9 @@ export default function FruitPage({ params }) {
         required
       />
       <br />
+      {/*this is the price*/}
       <div htmlFor="data-test-id=`product-price`">{singleFruit.price},- €</div>
-      {/*this is the button*/}
+      {/*this is the add to cart button*/}
       <Fruit fruit={singleFruit} />
       <Image
         htmlFor="data-test-id=`product-image`"
