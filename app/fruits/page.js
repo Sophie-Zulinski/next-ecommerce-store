@@ -15,7 +15,7 @@ export default function FruitsPage() {
   }
 
   const fruitsWithStars = products.map((fruit) => {
-    const fruitWithStars = { ...fruit, stars: 0 };
+    const fruitWithStars = { ...fruit, amount: 0 };
 
     // i read the cookie and find the fruit
     const fruitInCookie = fruitsCookieParsed.find(
@@ -24,7 +24,7 @@ export default function FruitsPage() {
 
     // if find the fruit i update the amount of stars
     if (fruitInCookie) {
-      fruitWithStars.stars = fruitInCookie.stars;
+      fruitWithStars.amount = fruitInCookie.amount;
     }
 
     return fruitWithStars;
@@ -40,7 +40,7 @@ export default function FruitsPage() {
               <Link href={`/fruits/${fruit.name.toLocaleLowerCase()}`}>
                 <h2>{fruit.name}</h2>
                 <p>{fruit.icon}</p>
-                <p>stars: {fruit.stars}</p>
+                <p>amount: {fruit.amount}</p>
               </Link>
             </div>
           );

@@ -16,7 +16,7 @@ export default function Fruit(props) {
           if (!fruitsInCookies) {
             // create the cookie with a new object for the fruit
             setStringifiedCookie('fruitsCookie', [
-              { id: props.fruit.id, stars: 1 },
+              { id: props.fruit.id, amount: 1 },
             ]);
             // if there is no cookie function stop here
             return;
@@ -29,11 +29,11 @@ export default function Fruit(props) {
           // my fruit is inside of the cookie
           if (foundFruit) {
             // Add a start to the foundFruit
-            foundFruit.stars++;
+            foundFruit.amount++;
             // my fruit is not inside of the cookie
           } else {
             // Add a the fruit to the array of fruits in cookies
-            fruitsInCookies.push({ id: props.fruit.id, stars: 1 });
+            fruitsInCookies.push({ id: props.fruit.id, amount: 1 });
           }
 
           // Update the cookie after transformation
