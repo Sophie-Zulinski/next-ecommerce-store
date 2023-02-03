@@ -1,6 +1,6 @@
 import { cookies } from 'next/headers';
 import Link from 'next/link';
-import { fruits, products } from '../../database/products';
+import { products } from '../../database/products';
 
 export default function Productamount() {
   // get the cookie from the server
