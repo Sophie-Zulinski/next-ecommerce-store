@@ -1,8 +1,9 @@
 import { cookies } from 'next/headers';
+import Image from 'next/image';
 import Link from 'next/link';
 import { products } from '../../database/products';
 
-export default function Productamount() {
+export default function FruitsPage() {
   // get the cookie from the server
   const fruitsCookie = cookies().get('fruitsCookie');
 
@@ -14,7 +15,7 @@ export default function Productamount() {
   }
 
   const fruitsWithStars = products.map((fruit) => {
-    const fruitWithStars = { ...fruit, amount: 0 };
+    const fruitWithStars = { ...fruit, stars: 0 };
 
     // i read the cookie and find the fruit
     const fruitInCookie = fruitsCookieParsed.find(
@@ -23,25 +24,29 @@ export default function Productamount() {
 
     // if find the fruit i update the amount of stars
     if (fruitInCookie) {
-      fruitWithStars.amount = fruitInCookie.amount;
+      fruitWithStars.stars = fruitInCookie.stars;
     }
 
     return fruitWithStars;
   });
 
   return (
-    <div>
-      {fruitsWithStars.map((fruit) => {
-        return (
-          <div key={fruit.id}>
-            <Link href={`/${fruit.name.toLocaleLowerCase()}`}>
-              <h2>{fruit.name}</h2>
-
-              <p>amount: {fruit.amount}</p>
-            </Link>
-          </div>
-        );
-      })}
-    </div>
+    <>
+      {' '}
+      <div>
+        {fruitsWithStars.map((fruit) => {
+          return (
+            <div key={fruit.id}>
+              <Link href={`/fruits/${fruit.name.toLocaleLowerCase()}`}>
+                <h2>{fruit.name}</h2>
+                <p>{fruit.icon}</p>
+                <p>stars: {fruit.stars}</p>
+              </Link>
+            </div>
+          );
+        })}
+      </div>
+      {console.log(fruitsWithStars)}
+    </>
   );
 }

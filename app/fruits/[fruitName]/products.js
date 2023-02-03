@@ -1,16 +1,13 @@
 'use client';
 
-import { getParsedCookie, setStringifiedCookie } from '../../utils/cookies';
+import { getParsedCookie, setStringifiedCookie } from '../../../utils/cookies';
 
 // fruitsCookie = [ {id: number, stars: number  },  ]
 
-export default function ProductsCookie(props) {
+export default function Fruit(props) {
   return (
     <div>
-      <h2>{props.fruit.name} Productcookie</h2>
-
       <button
-        htmlFor="data-test-id=`product-add-to-cart`"
         onClick={() => {
           // get the cookie
           const fruitsInCookies = getParsedCookie('fruitsCookie');
@@ -19,7 +16,7 @@ export default function ProductsCookie(props) {
           if (!fruitsInCookies) {
             // create the cookie with a new object for the fruit
             setStringifiedCookie('fruitsCookie', [
-              { id: props.fruit.id, amount: 0 },
+              { id: props.fruit.id, stars: 1 },
             ]);
             // if there is no cookie function stop here
             return;
@@ -32,18 +29,18 @@ export default function ProductsCookie(props) {
           // my fruit is inside of the cookie
           if (foundFruit) {
             // Add a start to the foundFruit
-            foundFruit.amount++;
+            foundFruit.stars++;
             // my fruit is not inside of the cookie
           } else {
             // Add a the fruit to the array of fruits in cookies
-            fruitsInCookies.push({ id: props.fruit.id, amount: 0 });
+            fruitsInCookies.push({ id: props.fruit.id, stars: 1 });
           }
 
           // Update the cookie after transformation
           setStringifiedCookie('fruitsCookie', fruitsInCookies);
         }}
       >
-        Add to cart
+        add to cart
       </button>
     </div>
   );
