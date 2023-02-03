@@ -19,14 +19,18 @@ export default function Products({ params }) {
     <>
       <h1>{singleProduct.name}</h1>
       <main>
-        <span>Quantity:</span>{' '}
-        <span htmlFor="data-test-id=`product-quantity`"> 1</span>
+        <span>Quantity (insert number):</span>{' '}
+        <input
+          htmlFor="data-test-id=`product-quantity`"
+          id="quantity"
+          name="quantity"
+          placeholder="1"
+          required
+        />
         <div htmlFor="data-test-id=`product-price`">
           {singleProduct.price},- €
         </div>
-        <button htmlFor="data-test-id=`product-add-to-cart`">
-          Add to cart
-        </button>
+        <ProductsCookie fruit={singleProduct} />
         <br />
         <Image
           htmlFor="data-test-id=`product-image`"
@@ -35,7 +39,6 @@ export default function Products({ params }) {
           width="300"
           height="458"
         />
-        <ProductsCookie fruit={singleProduct} />
         <Productamount amount={singleProduct.amount} />
       </main>
     </>

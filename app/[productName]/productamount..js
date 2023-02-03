@@ -34,9 +34,9 @@ export default function Productamount() {
       {fruitsWithStars.map((fruit) => {
         return (
           <div key={fruit.id}>
-            <Link href={`/fruits/${fruit.name.toLocaleLowerCase()}`}>
+            <Link href={`/${fruit.name.toLocaleLowerCase()}`}>
               <h2>{fruit.name}</h2>
-              <p>{fruit.icon}</p>
+
               <p>amount: {fruit.amount}</p>
             </Link>
           </div>

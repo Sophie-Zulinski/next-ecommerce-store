@@ -7,39 +7,10 @@ import { getParsedCookie, setStringifiedCookie } from '../../utils/cookies';
 export default function ProductsCookie(props) {
   return (
     <div>
-      <h2>{props.fruit.name}</h2>
+      <h2>{props.fruit.name} Productcookie</h2>
 
       <button
-        onClick={() => {
-          // get the cookie
-          const fruitsInCookies = getParsedCookie('fruitsCookie');
-          console.log('cart -', fruitsInCookies);
-          if (!fruitsInCookies) {
-            // if there is no cookie function stop here
-            return;
-          }
-
-          // try to find the fruit inside of the cookies
-          const foundFruit = fruitsInCookies.find((fruitInCookie) => {
-            return fruitInCookie.id === props.fruit.id;
-          });
-
-          // my fruit is not inside of the cookie
-          if (foundFruit) {
-            // update the cookie with the new values
-            foundFruit.amount--;
-            // if there is a negative value set number to 0
-            if (foundFruit.amount < 0) {
-              foundFruit.amount = 0;
-            }
-            // Update the cookie after transformation
-            setStringifiedCookie('fruitsCookie', fruitsInCookies);
-          }
-        }}
-      >
-        - 1
-      </button>
-      <button
+        htmlFor="data-test-id=`product-add-to-cart`"
         onClick={() => {
           // get the cookie
           const fruitsInCookies = getParsedCookie('fruitsCookie');
@@ -72,7 +43,7 @@ export default function ProductsCookie(props) {
           setStringifiedCookie('fruitsCookie', fruitsInCookies);
         }}
       >
-        + 1
+        Add to cart
       </button>
     </div>
   );
