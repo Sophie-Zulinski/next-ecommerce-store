@@ -1,11 +1,12 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { getLocalStorage, setLocalStorage } from '../utils/localStorage';
 
 export default function CookieBanner() {
   const [cookieBannerAccepted, setCookieBannerAccepted] = useState(false);
   useEffect(() => {
-    const localStorageValue = getLocalStorage('areCookieTermsAccepted');
+    const localStorageValue = JSON.parse(
+      window.localStorage.getItem('areCookiestermsaccepted'),
+    );
     const initialState =
       localStorageValue === undefined ? false : localStorageValue;
     setCookieBannerAccepted(initialState);
@@ -18,7 +19,11 @@ export default function CookieBanner() {
         <button
           onClick={() => {
             setCookieBannerAccepted(true);
-            setLocalStorage('areCookieTermsAccepted', true);
+            window.localStorage.setItem(
+              'areCookiestermsaccepted',
+
+              JSON.stringify(true),
+            );
           }}
         >
           Accept
