@@ -1,7 +1,11 @@
-import { productWithAmount } from '../cart/page';
+import { totalAmount, totalPrice } from '../cart/page';
 import styles from '../page.module.scss';
 
 export default function Checkout() {
+  const totalPricePerPlant = function calculateprice(price, amount) {
+    return price * amount;
+  };
+
   return (
     <>
       <h1>Checkout</h1>
