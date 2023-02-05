@@ -13,11 +13,11 @@ export default function Products() {
             <div key={product.id}>
               <Link
                 attribute_name="data-test-id=`product-<product id>`"
-                href={`/${product.name.toLocaleLowerCase()}`}
+                href={`/products/${product.name.toLocaleLowerCase()}`}
               >
                 <h2>{product.name}</h2>
               </Link>
-              <Link href={`/${product.name.toLocaleLowerCase()}`}>
+              <Link href={`/products/${product.name.toLocaleLowerCase()}`}>
                 <Image
                   src={`/images/${product.name}-${product.id}.jpg`}
                   alt={product.name}

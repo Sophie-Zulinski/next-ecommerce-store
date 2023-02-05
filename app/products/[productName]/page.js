@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { products } from '../../database/products';
+import { products } from '../../../database/products';
 import ProductsCookie from './products';
 
 // export const products = [

@@ -1,6 +1,6 @@
 'use client';
 
-import { getParsedCookie, setStringifiedCookie } from '../../utils/cookies';
+import { getParsedCookie, setStringifiedCookie } from '../../../utils/cookies';
 
 // fruitsCookie = [ {id: number, stars: number  },  ]
 
