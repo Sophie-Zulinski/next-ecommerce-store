@@ -32,6 +32,7 @@ export default function Products({ params }) {
           height="458"
         />
         <ProductsCookie product={singleProduct} />
+        {console.log('singleproduct', products)}
       </main>
     </>
   );
