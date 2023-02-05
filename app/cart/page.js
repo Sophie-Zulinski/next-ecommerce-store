@@ -37,9 +37,10 @@ export default function Cart() {
       {fruitsWithStars.map((product) => {
         return (
           <div key={product.id}>
-            <p>product: {product.name} </p>
-            <p> amount: {product.amount} </p>
-            {console.log('productamount', product.amount)}
+            <span> {product.name} </span>
+            <span> price: {product.price},- € </span>
+            <div> amount: {product.amount} </div>
+            <br />
           </div>
         );
       })}
