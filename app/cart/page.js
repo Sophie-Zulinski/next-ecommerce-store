@@ -31,6 +31,10 @@ export default function Cart() {
   });
   console.log('fuitswithStars', fruitsWithStars);
 
+  const totalPricePerPlant = function calculateprice(price, amount) {
+    return price * amount;
+  };
+
   return (
     <div>
       <h1>Cart</h1>
@@ -38,9 +42,13 @@ export default function Cart() {
         return (
           <div key={product.id}>
             <span> {product.name} </span>
-            <span> price: {product.price},- € </span>
+            <span> price per plant: {product.price},- € </span>
             <div> amount: {product.amount} </div>
-            <br />
+
+            <h1>
+              Subtotal {product.name}:
+              {totalPricePerPlant(product.price, product.amount)},- €
+            </h1>
           </div>
         );
       })}
