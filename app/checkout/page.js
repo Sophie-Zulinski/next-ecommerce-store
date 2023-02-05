@@ -1,4 +1,4 @@
-import { fruitsWithStars } from '../cart/page';
+import { productWithAmount } from '../cart/page';
 import styles from '../page.module.scss';
 
 export default function Checkout() {

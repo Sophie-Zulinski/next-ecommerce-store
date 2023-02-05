@@ -14,8 +14,8 @@ export default function Cart() {
     fruitsCookieParsed = JSON.parse(productsCookie.value);
   }
 
-  const fruitsWithStars = products.map((product) => {
-    const fruitWithStars = { ...product, amount: 0 };
+  const productsWithAmount = products.map((product) => {
+    const productWithAmount = { ...product, amount: 0 };
 
     // i read the cookie and find the fruit
     const productInCookie = fruitsCookieParsed.find(
@@ -24,12 +24,12 @@ export default function Cart() {
 
     // if find the fruit i update the amount of stars
     if (productInCookie) {
-      fruitWithStars.amount = productInCookie.amount;
+      productWithAmount.amount = productInCookie.amount;
     }
 
-    return fruitWithStars;
+    return productWithAmount;
   });
-  console.log('fuitswithStars', fruitsWithStars);
+  console.log('productsWithAmount', productsWithAmount);
 
   const totalPricePerPlant = function calculateprice(price, amount) {
     return price * amount;
@@ -38,7 +38,7 @@ export default function Cart() {
   return (
     <div>
       <h1>Cart</h1>
-      {fruitsWithStars.map((product) => {
+      {productsWithAmount.map((product) => {
         return (
           <div key={product.id}>
             <span> {product.name} </span>
