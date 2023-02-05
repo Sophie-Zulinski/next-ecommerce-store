@@ -40,7 +40,7 @@ export default function Cart() {
   }, 0);
 
   const totalPrice = productsWithAmount.reduce((prevVal, currentVal) => {
-    return prevVal + currentVal.price;
+    return prevVal + parseInt(currentVal.price);
   }, 0);
 
   return (
@@ -62,6 +62,7 @@ export default function Cart() {
         );
       })}
       <h1>Total amount: {totalAmount}</h1>
+      <h1>Total price: {totalPrice}</h1>
     </div>
   );
 }
