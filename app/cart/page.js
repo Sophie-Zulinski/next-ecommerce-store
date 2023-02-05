@@ -61,8 +61,9 @@ export default function Cart() {
           </div>
         );
       })}
-      <h1>Total amount: {totalAmount}</h1>
-      <h1>Total price: {totalPrice}</h1>
+      <div>Total amount: {totalAmount},- €</div>
+      <div>Total price: {totalPrice},- €</div>
+      <h1>TOTAL {totalPricePerPlant(totalAmount, totalPrice)},- €</h1>
     </div>
   );
 }
