@@ -10,34 +10,34 @@ export default function ProductsCookie(props) {
       <button
         onClick={() => {
           // get the cookie
-          const fruitsInCookies = getParsedCookie('fruitsCookie');
-          console.log('cart', fruitsInCookies);
+          const productsInCookies = getParsedCookie('productsCookie');
+          console.log('cart', productsInCookies);
           // if there is no cookie we initialize the value with a 1
-          if (!fruitsInCookies) {
+          if (!productsInCookies) {
             // create the cookie with a new object for the fruit
-            setStringifiedCookie('fruitsCookie', [
-              { id: props.fruit.id, amount: 0 },
+            setStringifiedCookie('productsCookie', [
+              { id: props.product.id, amount: 0 },
             ]);
             // if there is no cookie function stop here
             return;
           }
 
-          const foundFruit = fruitsInCookies.find((fruitInCookie) => {
-            return fruitInCookie.id === props.fruit.id;
+          const foundProduct = productsInCookies.find((productInCookie) => {
+            return productInCookie.id === props.product.id;
           });
 
           // my fruit is inside of the cookie
-          if (foundFruit) {
+          if (foundProduct) {
             // Add a start to the foundFruit
-            foundFruit.stars++;
+            foundProduct.amount++;
             // my fruit is not inside of the cookie
           } else {
             // Add a the fruit to the array of fruits in cookies
-            fruitsInCookies.push({ id: props.fruit.id, amount: 0 });
+            productsInCookies.push({ id: props.product.id, amount: 0 });
           }
 
           // Update the cookie after transformation
-          setStringifiedCookie('fruitsCookie', fruitsInCookies);
+          setStringifiedCookie('productsCookie', productsInCookies);
         }}
       >
         Add to cart
