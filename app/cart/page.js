@@ -45,10 +45,11 @@ export default function Cart() {
             <span> price per plant: {product.price},- € </span>
             <div> amount: {product.amount} </div>
 
-            <h1>
-              Subtotal {product.name}:
+            <div>
+              Subtotal {product.name}:{' '}
               {totalPricePerPlant(product.price, product.amount)},- €
-            </h1>
+            </div>
+            <br />
           </div>
         );
       })}
