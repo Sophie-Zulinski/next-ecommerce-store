@@ -15,7 +15,7 @@ export default function Cart() {
   }
 
   const fruitsWithStars = products.map((product) => {
-    const fruitWithStars = { ...products, amount: 0 };
+    const fruitWithStars = { ...product, amount: 0 };
 
     // i read the cookie and find the fruit
     const productInCookie = fruitsCookieParsed.find(
@@ -37,22 +37,9 @@ export default function Cart() {
       {fruitsWithStars.map((product) => {
         return (
           <div key={product.id}>
-            <p>
-              product: {product.name}
-              amount: {product.amount}
-              {console.log('productamount', product.amount)}
-              {console.log('productname02', product.name)}
-            </p>
-            <div>
-              {products.map((product) => {
-                return (
-                  <div key={product.id}>
-                    <h2>{product.name}</h2>
-                    {console.log('productname', product.name)}
-                  </div>
-                );
-              })}
-            </div>
+            <p>product: {product.name} </p>
+            <p> amount: {product.amount} </p>
+            {console.log('productamount', product.amount)}
           </div>
         );
       })}
