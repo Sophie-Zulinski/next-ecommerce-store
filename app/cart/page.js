@@ -35,6 +35,8 @@ export default function Cart() {
     return price * amount;
   };
 
+  const totalPrice = '10000';
+
   return (
     <div>
       <h1>Cart</h1>
@@ -53,6 +55,7 @@ export default function Cart() {
           </div>
         );
       })}
+      <h1>Total price: {totalPrice}</h1>
     </div>
   );
 }
