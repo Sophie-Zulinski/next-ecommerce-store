@@ -1,5 +1,6 @@
 import './global.scss';
 import Link from 'next/link';
+import totalAmount from './cart/page';
 import CookieBanner from './cookiebanner';
 import styles from './layout.module.scss';
 

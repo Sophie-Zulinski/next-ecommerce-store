@@ -61,7 +61,7 @@ export default function Cart() {
           </div>
         );
       })}
-      <div>Total amount: {totalAmount},- €</div>
+      <div>Total amount: {totalAmount} Plants</div>
       <div>Total price: {totalPrice},- €</div>
       <h1>TOTAL {totalPricePerPlant(totalAmount, totalPrice)},- €</h1>
     </div>
