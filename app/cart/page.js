@@ -28,15 +28,17 @@ export default function Cart() {
 
     return fruitWithStars;
   });
+  console.log('fuitswithStars', fruitsWithStars);
 
   return (
     <div>
-      {fruitsWithStars.map((product) => {
+      {fruitsWithStars.map((props) => {
         return (
-          <div key={product.id}>
-            <h2>{product.name}</h2>
-            <h1>{product.id}</h1>
-            <p>amount: {product.amount}</p>
+          <div key={props.id}>
+            <p>
+              amount: {props.amount}{' '}
+              {console.log('productamount', props.amount)}
+            </p>
           </div>
         );
       })}
