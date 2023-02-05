@@ -35,7 +35,13 @@ export default function Cart() {
     return price * amount;
   };
 
-  const totalPrice = '10000';
+  const totalAmount = productsWithAmount.reduce((prevVal, currentVal) => {
+    return prevVal + currentVal.amount;
+  }, 0);
+
+  const totalPrice = productsWithAmount.reduce((prevVal, currentVal) => {
+    return prevVal + currentVal.price;
+  }, 0);
 
   return (
     <div>
@@ -55,7 +61,7 @@ export default function Cart() {
           </div>
         );
       })}
-      <h1>Total price: {totalPrice}</h1>
+      <h1>Total amount: {totalAmount}</h1>
     </div>
   );
 }
