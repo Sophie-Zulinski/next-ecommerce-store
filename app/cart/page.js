@@ -29,19 +29,32 @@ export default function Cart() {
 
     return productWithAmount;
   });
-  console.log('productsWithAmount', productsWithAmount);
+
+  const productsWithSubtotal = productsWithAmount.map((productWithAmount) => {
+    const productsWithSubtotal = {
+      ...productWithAmount,
+      subtotal: productWithAmount.price * productWithAmount.amount,
+    };
+
+    return productsWithSubtotal;
+  });
+
+  console.log('productsWithSubtotal', productsWithSubtotal);
 
   const totalPricePerPlant = function calculateprice(price, amount) {
     return price * amount;
   };
+  console.log(totalPricePerPlant);
 
   const totalAmount = productsWithAmount.reduce((prevVal, currentVal) => {
     return prevVal + currentVal.amount;
   }, 0);
+  console.log('totalAmunt', totalAmount);
 
-  const totalPrice = productsWithAmount.reduce((prevVal, currentVal) => {
-    return prevVal + parseInt(currentVal.price);
+  const totaltotal = productsWithSubtotal.reduce((prevVal, currentVal) => {
+    return prevVal + currentVal.subtotal;
   }, 0);
+  console.log('totatl', totaltotal);
 
   return (
     <div>
@@ -62,8 +75,8 @@ export default function Cart() {
         );
       })}
       <div>Total amount: {totalAmount} Plants</div>{' '}
-      {console.log(typeof totalAmount)};<div>Total price: {totalPrice},- €</div>
-      <h1>TOTAL {totalPricePerPlant(totalAmount, totalPrice)},- €</h1>
+      {console.log(typeof totalAmount)}
+      <h1>TOTAL PRICE: {totaltotal},- €</h1>
     </div>
   );
 }
