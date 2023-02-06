@@ -1,11 +1,8 @@
-import { totalAmount, totalPrice } from '../cart/page';
+import { cookies } from 'next/headers';
+import { Cart } from '../cart/page';
 import styles from '../page.module.scss';
 
 export default function Checkout() {
-  const totalPricePerPlant = function calculateprice(price, amount) {
-    return price * amount;
-  };
-
   return (
     <>
       <h1>Checkout</h1>
@@ -97,6 +94,7 @@ export default function Checkout() {
           </button>
         </form>
       </main>
+      <h1>Cart</h1>
     </>
   );
 }
