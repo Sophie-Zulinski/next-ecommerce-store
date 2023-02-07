@@ -2,6 +2,7 @@ import { cookies } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getProducts } from '../../database/products';
+import RemoveCookie from './removebutton';
 
 export default async function Cart() {
   const products = await getProducts();
@@ -33,12 +34,12 @@ export default async function Cart() {
 
   // add subtotal to array out products
   const productsWithSubtotal = productsWithAmount.map((productWithAmount) => {
-    const productsWithSubtotal = {
+    const productWithSubtotal = {
       ...productWithAmount,
       subtotal: productWithAmount.price * productWithAmount.amount,
     };
 
-    return productsWithSubtotal;
+    return productWithSubtotal;
   });
 
   console.log('productsWithSubtotal', productsWithSubtotal);
@@ -68,6 +69,8 @@ export default async function Cart() {
             <div> amount: {product.amount} </div>
 
             <div>Subtotal {product.subtotal},- €</div>
+            <RemoveCookie product={product.amount} />
+
             <br />
           </div>
         );
