@@ -34,12 +34,12 @@ export default async function Cart() {
 
   // add subtotal to array out products
   const productsWithSubtotal = productsWithAmount.map((productWithAmount) => {
-    const productWithSubtotal = {
+    const productsWithSubtotal = {
       ...productWithAmount,
       subtotal: productWithAmount.price * productWithAmount.amount,
     };
 
-    return productWithSubtotal;
+    return productsWithSubtotal;
   });
 
   console.log('productsWithSubtotal', productsWithSubtotal);
@@ -49,7 +49,7 @@ export default async function Cart() {
   // console.log(totalPricePerPlant);
 
   // Calculate total amount
-  const totalAmount = productsWithAmount.reduce((prevVal, currentVal) => {
+  const totalAmount = productsWithSubtotal.reduce((prevVal, currentVal) => {
     return prevVal + currentVal.amount;
   }, 0);
   console.log('totalAmount', totalAmount);
@@ -60,12 +60,20 @@ export default async function Cart() {
   }, 0);
   console.log('totaltotal', totaltotal);
 
-  // function to show ice creams
-  function showItem(x) {
+  // function to show ice creams subtotal only if there is this product in the cart
+  function showAmountSubtotal(x) {
     if (x === 0) {
       return null;
     }
-    return x;
+    return 'Subtotal: ' + x + ',- €';
+  }
+
+  // function to show ice creams amount only if there is this product in the cart
+  function showAmount(x) {
+    if (x === 0) {
+      return null;
+    }
+    return x + ' scoops of ';
   }
 
   return (
@@ -74,19 +82,24 @@ export default async function Cart() {
       {productsWithSubtotal.map((product) => {
         return (
           <div key={product.id}>
-            <span> {product.name}, </span>
+            <span> {showAmount(product.amount)}</span>
+            <span>{product.name}, </span>
+            <span>
+              {/* Ternary operator to hide name if not in cart ({product.amount}?===0):(return null): return {product.name};*/}
+            </span>
             <span> price per scoop: {product.price},- € </span>
-            <div> amount: {showItem(product.amount)} </div>
+            <div> </div>
 
-            <div>Subtotal {product.subtotal},- €</div>
-            <RemoveCookie product={product.amount} />
+            <div> {showAmountSubtotal(product.subtotal)}</div>
 
             <br />
           </div>
         );
       })}
-      <div>Total amount: {totalAmount} </div> {console.log(typeof totalAmount)}
+      <h1>Total amount of scoops: {totalAmount} </h1>{' '}
+      {console.log(typeof totalAmount)}
       <h1>TOTAL PRICE: {totaltotal},- €</h1>
+      <RemoveCookie product={productsWithAmount} />
     </div>
   );
 }
