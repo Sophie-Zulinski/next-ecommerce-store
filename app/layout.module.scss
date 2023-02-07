@@ -1,10 +1,12 @@
 .header {
   nav {
-    background-color: darkgrey;
-
     margin: 20px 0;
     padding: 15px;
     display: flex;
+
+    justify-content: space-between;
+
+    border: dotted black;
 
     & a + a,
     span + a {
@@ -14,17 +16,15 @@
     & div {
       margin-right: auto;
       display: flex;
-      gap: 6px;
+      gap: 20px;
     }
   }
 }
 
 .footer {
-  background-color: darkgrey;
-
+  border: dotted black;
   margin: 20px 0;
   display: flex;
   margin-top: 20px;
   padding: 15px;
-  border-top: 2px solid var(--main-bg-color);
 }

@@ -95,7 +95,7 @@ export default async function Cart() {
             </div>
           );
         })}
-        <h1>Total amount of scoops: {totalAmount} </h1>{' '}
+        <h1>Total amount of scoops: {totalAmount} </h1>
         {console.log(typeof totalAmount)}
         <h1>TOTAL PRICE: {totaltotal},- €</h1>
         <RemoveCookie product={productsWithAmount} />

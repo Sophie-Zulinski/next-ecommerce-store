@@ -30,7 +30,9 @@ export default async function Products({ params }) {
       <div htmlFor="data-test-id=`product-price`">
         Price: {singleProduct.price},- €
       </div>
+      <ProductsCookie product={singleProduct} />
       <br />
+
       <Image
         htmlFor="data-test-id=`product-image`"
         src={`/images/${singleProduct.name}-${singleProduct.id}.jpg`}
@@ -38,7 +40,7 @@ export default async function Products({ params }) {
         width="300"
         height="300"
       />
-      <ProductsCookie product={singleProduct} />
+
       {console.log('singleproduct', products)}
     </main>
   );
