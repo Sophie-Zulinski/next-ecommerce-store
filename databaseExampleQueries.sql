@@ -3,9 +3,8 @@
 CREATE TABLE products (
   id integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
   name VARCHAR(30) NOT NULL,
-  price VARCHAR(10) NOT NULL,
-)
-;
+  price VARCHAR(10) NOT NULL
+);
 
 --Inserting products
 INSERT INTO products

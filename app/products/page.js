@@ -7,7 +7,7 @@ export default async function Products() {
   const products = await getProducts();
   return (
     <>
-      <h1>Plants</h1>
+      <h1>Ice Cream</h1>
       <main className={styles.main}>
         {products.map((product) => {
           return (

@@ -63,8 +63,8 @@ export default async function Cart() {
       {productsWithSubtotal.map((product) => {
         return (
           <div key={product.id}>
-            <span> {product.name} </span>
-            <span> price per plant: {product.price},- € </span>
+            <span> {product.name}, </span>
+            <span> price per scoop: {product.price},- € </span>
             <div> amount: {product.amount} </div>
 
             <div>Subtotal {product.subtotal},- €</div>
@@ -72,8 +72,7 @@ export default async function Cart() {
           </div>
         );
       })}
-      <div>Total amount: {totalAmount} Plants</div>{' '}
-      {console.log(typeof totalAmount)}
+      <div>Total amount: {totalAmount} </div> {console.log(typeof totalAmount)}
       <h1>TOTAL PRICE: {totaltotal},- €</h1>
     </div>
   );
