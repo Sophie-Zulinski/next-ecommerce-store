@@ -15,7 +15,7 @@ export default function ProductsCookie(props) {
           // if there is no cookie we initialize the value with a 1
           if (!productsInCookies) {
             // create the cookie with a new object for the fruit
-            setStringifiedCookie('Cart', [{ id: props.product.id, amount: 0 }]);
+            setStringifiedCookie('Cart', [{ id: props.product.id, amount: 1 }]);
             // if there is no cookie function stop here
             return;
           }
@@ -31,7 +31,7 @@ export default function ProductsCookie(props) {
             // my fruit is not inside of the cookie
           } else {
             // Add a the fruit to the array of fruits in cookies
-            productsInCookies.push({ id: props.product.id, amount: 0 });
+            productsInCookies.push({ id: props.product.id, amount: 1 });
           }
 
           // Update the cookie after transformation
