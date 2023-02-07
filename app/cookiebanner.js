@@ -14,14 +14,14 @@ export default function CookieBanner() {
   return (
     !cookieBannerAccepted && (
       <>
-        <div>This is a Cookie Banner</div>
+        <div>Do you want free cookies to your ice cream?</div>
         <button
           onClick={() => {
             setCookieBannerAccepted(true);
             setLocalStorage('areCookieTermsAccepted', true);
           }}
         >
-          Accept
+          Yes please!
         </button>
       </>
     )
