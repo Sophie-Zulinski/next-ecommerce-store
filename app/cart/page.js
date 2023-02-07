@@ -9,7 +9,7 @@ export default async function Cart() {
   // get the cookie from the server
   const productsCookie = cookies().get('Cart');
 
-  // create a default value if cooke doesn't exist
+  // create a default value if cookie doesn't exist
   let fruitsCookieParsed = [];
 
   if (productsCookie) {
@@ -48,15 +48,25 @@ export default async function Cart() {
   //  return price * amount;};
   // console.log(totalPricePerPlant);
 
+  // Calculate total amount
   const totalAmount = productsWithAmount.reduce((prevVal, currentVal) => {
     return prevVal + currentVal.amount;
   }, 0);
   console.log('totalAmount', totalAmount);
 
+  // Calculate total price
   const totaltotal = productsWithSubtotal.reduce((prevVal, currentVal) => {
     return prevVal + currentVal.subtotal;
   }, 0);
   console.log('totaltotal', totaltotal);
+
+  // function to show ice creams
+  function showItem(x) {
+    if (x === 0) {
+      return null;
+    }
+    return x;
+  }
 
   return (
     <div>
@@ -66,7 +76,7 @@ export default async function Cart() {
           <div key={product.id}>
             <span> {product.name}, </span>
             <span> price per scoop: {product.price},- € </span>
-            <div> amount: {product.amount} </div>
+            <div> amount: {showItem(product.amount)} </div>
 
             <div>Subtotal {product.subtotal},- €</div>
             <RemoveCookie product={product.amount} />
