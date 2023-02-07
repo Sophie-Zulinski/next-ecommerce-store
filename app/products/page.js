@@ -23,7 +23,7 @@ export default async function Products() {
                   src={`/images/${product.name}-${product.id}.jpg`}
                   alt={product.name}
                   width="300"
-                  height="458"
+                  height="300"
                 />
               </Link>
             </div>

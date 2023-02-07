@@ -30,7 +30,7 @@ export default async function Products({ params }) {
           src={`/images/${singleProduct.name}-${singleProduct.id}.jpg`}
           alt={singleProduct.name}
           width="300"
-          height="458"
+          height="300"
         />
         <ProductsCookie product={singleProduct} />
         {console.log('singleproduct', products)}
