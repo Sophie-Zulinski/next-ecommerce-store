@@ -11,10 +11,10 @@ CREATE TABLE products (
 INSERT INTO products
 (name, price)
 VALUES
-( 'Gumtree' , 5 ),
-( 'Lilac' , 10 ),
-( 'Succulents', 20 ),
-( 'Poppy' ,  50) ;
+( 'Strawberry' , 1 ),
+( 'Vanilla' , 2 ),
+( 'Pistachio', 3 ),
+( 'Smurf' ,  4) ;
 
 --Get all products
 SELECT * FROM products;
