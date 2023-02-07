@@ -2,6 +2,7 @@ import { cookies } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getProducts } from '../../database/products';
+import styles from './page.module.scss';
 import RemoveCookie from './removebutton';
 
 export default async function Cart() {
@@ -65,7 +66,7 @@ export default async function Cart() {
     if (x === 0) {
       return null;
     }
-    return 'Subtotal: ' + x + ',- €';
+    return '(Subtotal: ' + x + ',- €)';
   }
 
   // function to show ice creams amount only if there is this product in the cart
@@ -78,28 +79,27 @@ export default async function Cart() {
 
   return (
     <div>
-      <h1>Cart</h1>
-      {productsWithSubtotal.map((product) => {
-        return (
-          <div key={product.id}>
-            <span> {showAmount(product.amount)}</span>
-            <span>{product.name}, </span>
-            <span>
-              {/* Ternary operator to hide name if not in cart ({product.amount}?===0):(return null): return {product.name};*/}
-            </span>
-            <span> price per scoop: {product.price},- € </span>
-            <div> </div>
+      <main className={styles.main}>
+        <h1>Cart</h1>
+        {productsWithSubtotal.map((product) => {
+          return (
+            <div key={product.id}>
+              <span> {showAmount(product.amount)}</span>
+              <span>{product.name}, </span>
+              <span>
+                {/* Ternary operator to hide name if not in cart ({product.amount}?===0):(return null): return {product.name};*/}
+              </span>
+              <span> price per scoop: {product.price},- € </span>
 
-            <div> {showAmountSubtotal(product.subtotal)}</div>
-
-            <br />
-          </div>
-        );
-      })}
-      <h1>Total amount of scoops: {totalAmount} </h1>{' '}
-      {console.log(typeof totalAmount)}
-      <h1>TOTAL PRICE: {totaltotal},- €</h1>
-      <RemoveCookie product={productsWithAmount} />
+              <span> {showAmountSubtotal(product.subtotal)}</span>
+            </div>
+          );
+        })}
+        <h1>Total amount of scoops: {totalAmount} </h1>{' '}
+        {console.log(typeof totalAmount)}
+        <h1>TOTAL PRICE: {totaltotal},- €</h1>
+        <RemoveCookie product={productsWithAmount} />
+      </main>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { getProducts } from '../../../database/products';
 import ProductsCookie from './cookiebutton';
+import styles from './page.module.scss';
 
 // export const products = [
 //   { id: 1, name: 'Gumtree', price: '5' },
@@ -16,25 +17,29 @@ export default async function Products({ params }) {
   });
 
   return (
-    <>
+    <main className={styles.main}>
       <h1>{singleProduct.name}</h1>
-      <main>
-        <span>Quantity:</span>{' '}
-        <span htmlFor="data-test-id=`product-quantity`"> 1</span>
-        <div htmlFor="data-test-id=`product-price`">
-          {singleProduct.price},- €
-        </div>
-        <br />
-        <Image
-          htmlFor="data-test-id=`product-image`"
-          src={`/images/${singleProduct.name}-${singleProduct.id}.jpg`}
-          alt={singleProduct.name}
-          width="300"
-          height="300"
-        />
-        <ProductsCookie product={singleProduct} />
-        {console.log('singleproduct', products)}
-      </main>
-    </>
+
+      <input
+        htmlFor="data-test-id=`product-quantity`"
+        id="quantity"
+        name="quantity"
+        placeholder="Insert Quantity"
+        required
+      />
+      <div htmlFor="data-test-id=`product-price`">
+        Price: {singleProduct.price},- €
+      </div>
+      <br />
+      <Image
+        htmlFor="data-test-id=`product-image`"
+        src={`/images/${singleProduct.name}-${singleProduct.id}.jpg`}
+        alt={singleProduct.name}
+        width="300"
+        height="300"
+      />
+      <ProductsCookie product={singleProduct} />
+      {console.log('singleproduct', products)}
+    </main>
   );
 }
