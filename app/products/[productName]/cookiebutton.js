@@ -10,14 +10,12 @@ export default function ProductsCookie(props) {
       <button
         onClick={() => {
           // get the cookie
-          const productsInCookies = getParsedCookie('productsCookie');
+          const productsInCookies = getParsedCookie('Cart');
           console.log('cart', productsInCookies);
           // if there is no cookie we initialize the value with a 1
           if (!productsInCookies) {
             // create the cookie with a new object for the fruit
-            setStringifiedCookie('productsCookie', [
-              { id: props.product.id, amount: 0 },
-            ]);
+            setStringifiedCookie('Cart', [{ id: props.product.id, amount: 0 }]);
             // if there is no cookie function stop here
             return;
           }
@@ -37,7 +35,7 @@ export default function ProductsCookie(props) {
           }
 
           // Update the cookie after transformation
-          setStringifiedCookie('productsCookie', productsInCookies);
+          setStringifiedCookie('Cart', productsInCookies);
         }}
       >
         Add to cart

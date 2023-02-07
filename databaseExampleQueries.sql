@@ -16,5 +16,5 @@ VALUES
 ( 'Succulents', 20 ),
 ( 'Poppy' ,  50) ;
 
---Get all animals
+--Get all products
 SELECT * FROM products;

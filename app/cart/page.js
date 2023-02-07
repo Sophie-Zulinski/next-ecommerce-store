@@ -1,11 +1,12 @@
 import { cookies } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
-import { products } from '../../database/products';
+import { getProducts } from '../../database/products';
 
-export default function Cart() {
+export default async function Cart() {
+  const products = await getProducts();
   // get the cookie from the server
-  const productsCookie = cookies().get('productsCookie');
+  const productsCookie = cookies().get('Cart');
 
   // create a default value if cooke doesn't exist
   let fruitsCookieParsed = [];

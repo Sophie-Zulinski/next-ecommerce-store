@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { products } from '../../../database/products';
+import { getProducts } from '../../../database/products';
 import ProductsCookie from './cookiebutton';
 
 // export const products = [
@@ -9,7 +9,8 @@ import ProductsCookie from './cookiebutton';
 // { id: 4, name: 'Poppy', price: '50' },
 //
 
-export default function Products({ params }) {
+export default async function Products({ params }) {
+  const products = await getProducts();
   const singleProduct = products.find((product) => {
     return product.name.toLowerCase() === params.productName;
   });

@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { products } from '../../database/products';
+import { getProducts } from '../../database/products';
 import styles from './page.module.scss';
 
-export default function Products() {
+export default async function Products() {
+  const products = await getProducts();
   return (
     <>
       <h1>Plants</h1>
