@@ -10,7 +10,7 @@ import styles from './page.module.scss';
 // { id: 4, name: 'Poppy', price: '50' },
 //
 
-export default async function Products({ params }) {
+export default async function Product({ params }) {
   const products = await getProducts();
   const singleProduct = products.find((product) => {
     return product.name.toLowerCase() === params.productName;
