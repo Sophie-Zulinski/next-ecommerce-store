@@ -10,14 +10,6 @@ export default function RemoveCookie(props) {
         // get the cookie
         const productsInCookies = getParsedCookie('Cart');
         console.log('cart', productsInCookies);
-        // if there is no cookie we initialize the value with a 1
-        if (!productsInCookies) {
-          // create the cookie with a new object for the fruit
-          // add the inserted amount when there is none yet
-          setStringifiedCookie('Cart', [{ id: props.product.id, amount: 1 }]);
-          // if there is no cookie function stop here
-          return;
-        }
 
         const foundProduct = productsInCookies.find((productInCookie) => {
           return productInCookie.id === props.product.id;

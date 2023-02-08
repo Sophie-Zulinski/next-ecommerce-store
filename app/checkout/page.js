@@ -97,6 +97,7 @@ export default function Checkout() {
       </button>
 
       <h1> Total price: {totaltotal} </h1>
+      {console.log('ckeckcout', totaltotal)}
     </main>
   );
 }
