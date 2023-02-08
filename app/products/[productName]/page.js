@@ -11,7 +11,9 @@ import styles from './page.module.scss';
 //
 
 export default async function Product({ params }) {
+  // this is for the database:
   const products = await getProducts();
+  // this is fort the cookies:
   const singleProduct = products.find((product) => {
     return product.name.toLowerCase() === params.productName;
   });

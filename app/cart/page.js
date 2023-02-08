@@ -77,6 +77,13 @@ export default async function Cart() {
     return x + ' scoops of ' + y + ' ' + z + ',- € per scoop';
   }
 
+  function showButton(x, y) {
+    if (x === 0) {
+      return null;
+    }
+    return y;
+  }
+
   return (
     <div>
       <main className={styles.main}>
@@ -90,16 +97,16 @@ export default async function Cart() {
                   {showAmount(product.amount, product.name, product.price)}
                 </span>
 
-                <span>
-                  {/* Ternary operator to hide name if not in cart ({product.amount}?===0):(return null): return {product.name};*/}
-                </span>
+                {/* Ternary operator to hide name if not in cart ({product.amount}?===0):(return null): return {product.name};*/}
 
                 <span> {showAmountSubtotal(product.subtotal)}</span>
+                {showButton(product.amount, <RemoveCookie product={product} />)}
               </div>
             );
           })}
         </div>
         <h1>Total amount of scoops: {totalAmount} </h1>
+        {/* <RemoveCookie product={totalAmount} /> */}
         {console.log(typeof totalAmount)}
         <h1 htmlFor="data-test-id=`cart-total`">
           TOTAL PRICE: {totaltotal},- €
@@ -107,7 +114,6 @@ export default async function Cart() {
         <button htmlFor="data-test-id=`cart-checkout`">
           <Link href="/checkout">Checkout</Link>
         </button>
-        <RemoveCookie product={productsWithAmount} />
       </main>
     </div>
   );

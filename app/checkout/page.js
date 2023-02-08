@@ -1,6 +1,6 @@
 import { cookies } from 'next/headers';
 import Link from 'next/link';
-import { Cart } from '../cart/page';
+import { totaltotal } from '../cart/page';
 import styles from './page.module.scss';
 
 export default function Checkout() {
@@ -96,7 +96,7 @@ export default function Checkout() {
         <Link href="/thankyou">Confirm order</Link>
       </button>
 
-      <h1>Cart totaltotal </h1>
+      <h1> Total price: {totaltotal} </h1>
     </main>
   );
 }
