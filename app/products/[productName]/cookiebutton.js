@@ -1,17 +1,22 @@
 'use client';
-
+import { useState } from 'react';
 import { getParsedCookie, setStringifiedCookie } from '../../../utils/cookies';
 
-// fruitsCookie = [ {id: number, stars: number  },  ]
-
 export default function ProductsCookie(props) {
+  const [amountInsert, setAmountInsert] = useState('');
+  // fruitsCookie = [ {id: number, stars: number  },  ]
+
+  function handlefirstChange(x) {
+    setAmountInsert(x.target.value);
+  }
   return (
     <div>
       {' '}
       <input
         htmlFor="data-test-id=`product-quantity`"
-        id="quantity"
-        name="quantity"
+        value={amountInsert}
+        onChange={handlefirstChange}
+        id={amountInsert}
         placeholder="Insert Quantity"
         required
       />
@@ -24,7 +29,9 @@ export default function ProductsCookie(props) {
           // if there is no cookie we initialize the value with a 1
           if (!productsInCookies) {
             // create the cookie with a new object for the fruit
-            setStringifiedCookie('Cart', [{ id: props.product.id, amount: 1 }]);
+            setStringifiedCookie('Cart', [
+              { id: props.product.id, amount: amountInsert },
+            ]);
             // if there is no cookie function stop here
             return;
           }
@@ -40,9 +47,12 @@ export default function ProductsCookie(props) {
             // my fruit is not inside of the cookie
           } else {
             // Add a the fruit to the array of fruits in cookies
-            productsInCookies.push({ id: props.product.id, amount: 1 });
+            productsInCookies.push({
+              id: props.product.id,
+              amount: amountInsert,
+            });
           }
-
+          console.log('amountInsert', amountInsert);
           // Update the cookie after transformation
           setStringifiedCookie('Cart', productsInCookies);
         }}
