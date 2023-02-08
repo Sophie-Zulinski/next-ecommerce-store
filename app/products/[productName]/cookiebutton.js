@@ -15,6 +15,7 @@ export default function ProductsCookie(props) {
       <input
         htmlFor="data-test-id=`product-quantity`"
         value={amountInsert}
+        type="number"
         onChange={handlefirstChange}
         id={amountInsert}
         placeholder="Insert Quantity"
@@ -31,7 +32,7 @@ export default function ProductsCookie(props) {
             // create the cookie with a new object for the fruit
             // add the inserted amount when there is none yet
             setStringifiedCookie('Cart', [
-              { id: props.product.id, amount: amountInsert },
+              { id: props.product.id, amount: parseInt(amountInsert, 10) },
             ]);
             // if there is no cookie function stop here
             return;
@@ -50,7 +51,7 @@ export default function ProductsCookie(props) {
             // Add a the fruit to the array of fruits in cookies, add amountInsert
             productsInCookies.push({
               id: props.product.id,
-              amount: amountInsert,
+              amount: parseInt(amountInsert, 10),
             });
           }
           console.log('amountInsert', amountInsert);

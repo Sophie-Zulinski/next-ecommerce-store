@@ -81,25 +81,32 @@ export default async function Cart() {
     <div>
       <main className={styles.main}>
         <h1>Cart</h1>
-        {productsWithSubtotal.map((product) => {
-          return (
-            <div key={product.id}>
-              <span>
-                {' '}
-                {showAmount(product.amount, product.name, product.price)}
-              </span>
+        <div htmlFor="data-test-id='cart-product-<product id>'">
+          {productsWithSubtotal.map((product) => {
+            return (
+              <div key={product.id}>
+                <span htmlFor="data-test-id='cart-product-quantity-<product id>'">
+                  {' '}
+                  {showAmount(product.amount, product.name, product.price)}
+                </span>
 
-              <span>
-                {/* Ternary operator to hide name if not in cart ({product.amount}?===0):(return null): return {product.name};*/}
-              </span>
+                <span>
+                  {/* Ternary operator to hide name if not in cart ({product.amount}?===0):(return null): return {product.name};*/}
+                </span>
 
-              <span> {showAmountSubtotal(product.subtotal)}</span>
-            </div>
-          );
-        })}
+                <span> {showAmountSubtotal(product.subtotal)}</span>
+              </div>
+            );
+          })}
+        </div>
         <h1>Total amount of scoops: {totalAmount} </h1>
         {console.log(typeof totalAmount)}
-        <h1>TOTAL PRICE: {totaltotal},- €</h1>
+        <h1 htmlFor="data-test-id=`cart-total`">
+          TOTAL PRICE: {totaltotal},- €
+        </h1>
+        <button htmlFor="data-test-id=`cart-checkout`">
+          <Link href="/checkout">Checkout</Link>
+        </button>
         <RemoveCookie product={productsWithAmount} />
       </main>
     </div>

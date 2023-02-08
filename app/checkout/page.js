@@ -91,11 +91,10 @@ export default function Checkout() {
           required
         />
         <br />
-        <button htmlFor="data-test-id=`checkout-confirm-order`">
-          Buy scoops
-        </button>
       </form>
-      <Link href="/products">Products</Link>
+      <button htmlFor="data-test-id=`checkout-confirm-order`">
+        <Link href="/thankyou">Confirm order</Link>
+      </button>
 
       <h1>Cart totaltotal </h1>
     </main>
