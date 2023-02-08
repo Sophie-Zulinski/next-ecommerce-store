@@ -20,13 +20,6 @@ export default async function Products({ params }) {
     <main className={styles.main}>
       <h1>{singleProduct.name}</h1>
 
-      <input
-        htmlFor="data-test-id=`product-quantity`"
-        id="quantity"
-        name="quantity"
-        placeholder="Insert Quantity"
-        required
-      />
       <div htmlFor="data-test-id=`product-price`">
         Price: {singleProduct.price},- €
       </div>

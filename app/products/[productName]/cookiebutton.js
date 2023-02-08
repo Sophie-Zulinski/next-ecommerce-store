@@ -7,7 +7,16 @@ import { getParsedCookie, setStringifiedCookie } from '../../../utils/cookies';
 export default function ProductsCookie(props) {
   return (
     <div>
+      {' '}
+      <input
+        htmlFor="data-test-id=`product-quantity`"
+        id="quantity"
+        name="quantity"
+        placeholder="Insert Quantity"
+        required
+      />
       <button
+        htmlFor="data-test-id=`product-add-to-cart`"
         onClick={() => {
           // get the cookie
           const productsInCookies = getParsedCookie('Cart');
