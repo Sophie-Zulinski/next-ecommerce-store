@@ -29,6 +29,7 @@ export default function ProductsCookie(props) {
           // if there is no cookie we initialize the value with a 1
           if (!productsInCookies) {
             // create the cookie with a new object for the fruit
+            // add the inserted amount when there is none yet
             setStringifiedCookie('Cart', [
               { id: props.product.id, amount: amountInsert },
             ]);
@@ -46,7 +47,7 @@ export default function ProductsCookie(props) {
             foundProduct.amount++;
             // my fruit is not inside of the cookie
           } else {
-            // Add a the fruit to the array of fruits in cookies
+            // Add a the fruit to the array of fruits in cookies, add amountInsert
             productsInCookies.push({
               id: props.product.id,
               amount: amountInsert,

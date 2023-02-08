@@ -1,4 +1,5 @@
 import { cookies } from 'next/headers';
+import Link from 'next/link';
 import { Cart } from '../cart/page';
 import styles from './page.module.scss';
 
@@ -94,8 +95,9 @@ export default function Checkout() {
           Buy scoops
         </button>
       </form>
+      <Link href="/products">Products</Link>
 
-      <h1>Cart</h1>
+      <h1>Cart totaltotal </h1>
     </main>
   );
 }
