@@ -70,11 +70,11 @@ export default async function Cart() {
   }
 
   // function to show ice creams amount only if there is this product in the cart
-  function showAmount(x) {
+  function showAmount(x, y, z) {
     if (x === 0) {
       return null;
     }
-    return x + ' scoops of ';
+    return x + ' scoops of ' + y + ' ' + z + ',- € per scoop';
   }
 
   return (
@@ -84,12 +84,14 @@ export default async function Cart() {
         {productsWithSubtotal.map((product) => {
           return (
             <div key={product.id}>
-              <span> {showAmount(product.amount)}</span>
-              <span>{product.name}, </span>
+              <span>
+                {' '}
+                {showAmount(product.amount, product.name, product.price)}
+              </span>
+
               <span>
                 {/* Ternary operator to hide name if not in cart ({product.amount}?===0):(return null): return {product.name};*/}
               </span>
-              <span> price per scoop: {product.price},- € </span>
 
               <span> {showAmountSubtotal(product.subtotal)}</span>
             </div>
