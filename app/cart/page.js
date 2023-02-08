@@ -5,6 +5,9 @@ import { getProducts } from '../../database/products';
 import styles from './page.module.scss';
 import RemoveCookie from './removebutton';
 
+// we add this only if we have no dynamic function as cookies or headers
+export const dynamic = 'force-dynamic';
+
 export default async function Cart() {
   const products = await getProducts();
   // get the cookie from the server

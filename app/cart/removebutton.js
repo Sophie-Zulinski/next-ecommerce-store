@@ -27,17 +27,13 @@ export default function RemoveCookie(props) {
         if (foundProduct) {
           // Add a start to the foundFruit
           foundProduct.amount--;
-          // my fruit is not inside of the cookie
-        } else {
-          // Add a the fruit to the array of fruits in cookies, add amountInsert
-          productsInCookies.push({
-            id: props.product.id,
-            amount: 1,
-          });
+          // if there is a negative value set number to 0
+          if (foundProduct.amount < 0) {
+            foundProduct.amount = 0;
+          }
+          // Update the cookie after transformation
+          setStringifiedCookie('Cart', productsInCookies);
         }
-
-        // Update the cookie after transformation
-        setStringifiedCookie('Cart', productsInCookies);
       }}
     >
       Remove from cart
