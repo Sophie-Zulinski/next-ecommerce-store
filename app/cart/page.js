@@ -20,16 +20,6 @@ export default async function Cart() {
   }
   console.log('fruitCookieParsed', fruitsCookieParsed);
 
-  // LENGTH COOKIE START
-  const length = cookies().get('Length');
-  console.log('length', length);
-  let lengthCookieParsed = [];
-
-  if (length) {
-    lengthCookieParsed = JSON.parse(length.value);
-  }
-  console.log('lengthCookieParsed', lengthCookieParsed);
-  // LENGTH COOKIE END
   const productsWithAmount = products.map((product) => {
     const productWithAmount = { ...product, amount: 0 };
 
@@ -127,7 +117,6 @@ export default async function Cart() {
         <button htmlFor="data-test-id=`cart-checkout`">
           <Link href="/checkout">Checkout</Link>
         </button>
-        <h1>Amount of items: {lengthCookieParsed}</h1>
       </main>
     </div>
   );
