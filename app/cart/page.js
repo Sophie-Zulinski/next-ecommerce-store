@@ -5,13 +5,12 @@ import { getProducts } from '../../database/products';
 import styles from './page.module.scss';
 import RemoveCookie from './removebutton';
 
-// we add this only if we have no dynamic function as cookies or headers
-export const dynamic = 'force-dynamic';
-
 export default async function Cart() {
+  // get products from database
   const products = await getProducts();
   // get the cookie from the server
   const productsCookie = cookies().get('Cart');
+  console.log('productsCookie', productsCookie);
 
   // create a default value if cookie doesn't exist
   let fruitsCookieParsed = [];
@@ -19,7 +18,18 @@ export default async function Cart() {
   if (productsCookie) {
     fruitsCookieParsed = JSON.parse(productsCookie.value);
   }
+  console.log('fruitCookieParsed', fruitsCookieParsed);
 
+  // LENGTH COOKIE START
+  const length = cookies().get('Length');
+  console.log('length', length);
+  let lengthCookieParsed = [];
+
+  if (length) {
+    lengthCookieParsed = JSON.parse(length.value);
+  }
+  console.log('lengthCookieParsed', lengthCookieParsed);
+  // LENGTH COOKIE END
   const productsWithAmount = products.map((product) => {
     const productWithAmount = { ...product, amount: 0 };
 
@@ -117,6 +127,7 @@ export default async function Cart() {
         <button htmlFor="data-test-id=`cart-checkout`">
           <Link href="/checkout">Checkout</Link>
         </button>
+        <h1>Amount of items: {lengthCookieParsed}</h1>
       </main>
     </div>
   );
