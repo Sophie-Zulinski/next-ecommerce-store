@@ -1,6 +1,7 @@
 import './global.scss';
 import { cookies } from 'next/headers';
 import Link from 'next/link';
+import TotalAmount from './cart/totalamount';
 import CookieBanner from './cookiebanner';
 import styles from './layout.module.scss';
 
@@ -31,6 +32,9 @@ export default function RootLayout({ children }) {
               <Link href="/checkout">Checkout</Link>
             </div>
             <div>{lengthCookieParsed}</div>
+            <div>
+              <TotalAmount />
+            </div>
           </nav>
         </header>
 

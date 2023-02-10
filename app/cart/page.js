@@ -2,8 +2,10 @@ import { cookies } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getProducts } from '../../database/products';
+import { getParsedCookie, setStringifiedCookie } from '../../utils/cookies';
 import styles from './page.module.scss';
 import RemoveCookie from './removebutton';
+import TotalAmount from './totalamount';
 
 export default async function Cart() {
   // get products from database
@@ -62,7 +64,8 @@ export default async function Cart() {
   const totaltotal = productsWithSubtotal.reduce((prevVal, currentVal) => {
     return prevVal + currentVal.subtotal;
   }, 0);
-  console.log('totaltotal', totaltotal);
+  console.log('totaltotalcookie', totaltotal);
+  setStringifiedCookie('totalAmount', totaltotal);
 
   // function to show ice creams subtotal only if there is this product in the cart
   function showAmountSubtotal(x) {
@@ -117,6 +120,7 @@ export default async function Cart() {
         <button htmlFor="data-test-id=`cart-checkout`">
           <Link href="/checkout">Checkout</Link>
         </button>
+        <TotalAmount />
       </main>
     </div>
   );

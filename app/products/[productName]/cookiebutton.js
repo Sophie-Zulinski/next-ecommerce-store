@@ -1,4 +1,5 @@
 'use client';
+
 import { useState } from 'react';
 import { getParsedCookie, setStringifiedCookie } from '../../../utils/cookies';
 
@@ -64,6 +65,9 @@ export default function ProductsCookie(props) {
           setStringifiedCookie('Length', length);
 
           // SET COOKIE TOTAL items
+          // create a default value if cookie doesn't exist
+
+          // Update the cookie after transformation
         }}
       >
         Add to cart
