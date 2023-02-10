@@ -1,5 +1,6 @@
 import './global.scss';
 import { cookies } from 'next/headers';
+import Image from 'next/image';
 import Link from 'next/link';
 import TotalAmount from './cart/totalamount';
 import CookieBanner from './cookiebanner';
@@ -26,12 +27,22 @@ export default function RootLayout({ children }) {
           <nav>
             <div>
               <Link href="/">Home</Link>
-              <Link href="/products">Products</Link>
+              <Link href="/products">Choose Flavours</Link>
             </div>
             {/*<div>{lengthCookieParsed}</div>*/}
-            <div>
-              <TotalAmount />
-              <Link href="/cart">Cart</Link>
+            <div className={styles.cart}>
+              <span className={styles.amount}>
+                <TotalAmount />
+              </span>
+              <Link href="/cart">
+                {' '}
+                <Image
+                  src="/images/cart.png"
+                  alt="cart"
+                  width="35"
+                  height="30"
+                />
+              </Link>
               <Link href="/checkout">Checkout</Link>
             </div>
           </nav>

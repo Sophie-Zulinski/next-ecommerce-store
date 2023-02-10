@@ -22,7 +22,7 @@ export default async function Cart() {
   if (productsCookie) {
     fruitsCookieParsed = JSON.parse(productsCookie.value);
   }
-  console.log('fruitCookieParsed', fruitsCookieParsed);
+  console.log('fruitCookieParsedPage', fruitsCookieParsed);
 
   const productsWithAmount = products.map((product) => {
     const productWithAmount = { ...product, amount: 0 };

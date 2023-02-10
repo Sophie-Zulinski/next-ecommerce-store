@@ -6,7 +6,6 @@ export default async function TotalPrice() {
   const products = await getProducts();
   // get the cookie from the server
   const productsCookie = cookies().get('Cart');
-  console.log('productsCookie', productsCookie);
 
   // create a default value if cookie doesn't exist
   let fruitsCookieParsed = [];
@@ -14,7 +13,6 @@ export default async function TotalPrice() {
   if (productsCookie) {
     fruitsCookieParsed = JSON.parse(productsCookie.value);
   }
-  console.log('fruitCookieParsed', fruitsCookieParsed);
 
   const productsWithAmount = products.map((product) => {
     const productWithAmount = { ...product, amount: 0 };
@@ -42,8 +40,6 @@ export default async function TotalPrice() {
     return productsWithSubtotal;
   });
 
-  console.log('productsWithSubtotal', productsWithSubtotal);
-
   //  const totalPricePerPlant = function calculateprice(price, amount) {
   //  return price * amount;};
   // console.log(totalPricePerPlant);
@@ -52,6 +48,6 @@ export default async function TotalPrice() {
   const totaltotal = productsWithSubtotal.reduce((prevVal, currentVal) => {
     return prevVal + currentVal.subtotal;
   }, 0);
-  console.log('totaltotalcookie', totaltotal);
+  console.log('totalprice', totaltotal);
   return <div>Total price: {totaltotal} ,- €</div>;
 }

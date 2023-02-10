@@ -14,9 +14,21 @@
     }
 
     & div {
-      margin-right: auto;
       display: flex;
       gap: 20px;
+    }
+
+    .cart {
+      margin-left: auto;
+    }
+    .amount {
+      background-color: pink;
+      width: 35px;
+      height: 35px;
+
+      text-align: center;
+      justify-content: center;
+      border-radius: 50%;
     }
   }
 }
