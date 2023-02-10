@@ -55,6 +55,6 @@ export default async function TotalAmount() {
     return prevVal + currentVal.amount;
   }, 0);
   console.log('totalAmount', totalAmount);
-  return <div>{totalAmount}</div>;
+  return <span>{totalAmount}</span>;
 }
 // Calculate total amount

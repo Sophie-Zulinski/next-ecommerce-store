@@ -60,9 +60,9 @@ export default function ProductsCookie(props) {
           setStringifiedCookie('Cart', productsInCookies);
 
           // SET COOkIE LENGTH
-          const length = productsInCookies.length;
+          //const length = productsInCookies.length;
           // Update the cookie after transformation
-          setStringifiedCookie('Length', length);
+          //setStringifiedCookie('Length', length);
 
           // SET COOKIE TOTAL items
           // create a default value if cookie doesn't exist

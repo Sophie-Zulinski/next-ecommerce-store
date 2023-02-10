@@ -11,7 +11,8 @@ import TotalPrice from './totalprice';
 export default async function Cart() {
   // get products from database
   const products = await getProducts();
-  // get the cookie from the server
+  // get products from database
+
   const productsCookie = cookies().get('Cart');
   console.log('productsCookie', productsCookie);
 
@@ -48,25 +49,6 @@ export default async function Cart() {
 
     return productsWithSubtotal;
   });
-
-  console.log('productsWithSubtotal', productsWithSubtotal);
-
-  //  const totalPricePerPlant = function calculateprice(price, amount) {
-  //  return price * amount;};
-  // console.log(totalPricePerPlant);
-
-  // Calculate total amount
-  const totalAmount = productsWithSubtotal.reduce((prevVal, currentVal) => {
-    return prevVal + currentVal.amount;
-  }, 0);
-  console.log('totalAmount', totalAmount);
-
-  // Calculate total price
-  const totaltotal = productsWithSubtotal.reduce((prevVal, currentVal) => {
-    return prevVal + currentVal.subtotal;
-  }, 0);
-  console.log('totaltotalcookie', totaltotal);
-  setStringifiedCookie('totalAmount', totaltotal);
 
   // function to show ice creams subtotal only if there is this product in the cart
   function showAmountSubtotal(x) {
@@ -112,17 +94,17 @@ export default async function Cart() {
             );
           })}
         </div>
-        <h1>Total amount of scoops: {totalAmount} </h1>
+        <h1>
+          Total amount of scoops: <TotalAmount />
+        </h1>
         {/* <RemoveCookie product={totalAmount} /> */}
         {console.log(typeof totalAmount)}
         <h1 htmlFor="data-test-id=`cart-total`">
-          TOTAL PRICE: {totaltotal},- €
+          <TotalPrice />
         </h1>
         <button htmlFor="data-test-id=`cart-checkout`">
           <Link href="/checkout">Checkout</Link>
         </button>
-        <TotalAmount />
-        <TotalPrice />
       </main>
     </div>
   );
