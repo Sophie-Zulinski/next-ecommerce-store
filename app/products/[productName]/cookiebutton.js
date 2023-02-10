@@ -57,22 +57,16 @@ export default function ProductsCookie(props) {
           console.log('amountInsert', amountInsert);
           // Update the cookie after transformation
           setStringifiedCookie('Cart', productsInCookies);
-        }}
-      >
-        Add to cart
-      </button>
-      {/*Test set sum cookie*/}
-      <button
-        htmlFor="data-test-id=`product-add-sum to cookie`"
-        onClick={() => {
-          // get the cookie
-          const productsInCookies = getParsedCookie('Cart');
+
+          // SET COOkIE LENGTH
           const length = productsInCookies.length;
           // Update the cookie after transformation
           setStringifiedCookie('Length', length);
+
+          // SET COOKIE TOTAL items
         }}
       >
-        Test length
+        Add to cart
       </button>
     </div>
   );
