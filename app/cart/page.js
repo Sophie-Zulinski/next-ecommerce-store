@@ -6,6 +6,7 @@ import { getParsedCookie, setStringifiedCookie } from '../../utils/cookies';
 import styles from './page.module.scss';
 import RemoveCookie from './removebutton';
 import TotalAmount from './totalamount';
+import TotalPrice from './totalprice';
 
 export default async function Cart() {
   // get products from database
@@ -121,6 +122,7 @@ export default async function Cart() {
           <Link href="/checkout">Checkout</Link>
         </button>
         <TotalAmount />
+        <TotalPrice />
       </main>
     </div>
   );

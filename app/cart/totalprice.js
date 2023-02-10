@@ -1,9 +1,7 @@
 import { cookies } from 'next/headers';
-import Image from 'next/image';
-import Link from 'next/link';
 import { getProducts } from '../../database/products';
 
-export default async function TotalAmount() {
+export default async function TotalPrice() {
   // get products from database
   const products = await getProducts();
   // get the cookie from the server
@@ -50,11 +48,10 @@ export default async function TotalAmount() {
   //  return price * amount;};
   // console.log(totalPricePerPlant);
 
-  // Calculate total amount
-  const totalAmount = productsWithSubtotal.reduce((prevVal, currentVal) => {
-    return prevVal + currentVal.amount;
+  // Calculate total price
+  const totaltotal = productsWithSubtotal.reduce((prevVal, currentVal) => {
+    return prevVal + currentVal.subtotal;
   }, 0);
-  console.log('totalAmount', totalAmount);
-  return <div>{totalAmount}</div>;
+  console.log('totaltotalcookie', totaltotal);
+  return <div>Total price: {totaltotal} ,- €</div>;
 }
-// Calculate total amount
