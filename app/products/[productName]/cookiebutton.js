@@ -59,15 +59,13 @@ export default function ProductsCookie(props) {
           // Update the cookie after transformation
           setStringifiedCookie('Cart', productsInCookies);
 
-          // SET COOkIE LENGTH
-          //const length = productsInCookies.length;
-          // Update the cookie after transformation
-          //setStringifiedCookie('Length', length);
-
-          // SET COOKIE TOTAL items
-          // create a default value if cookie doesn't exist
-
-          // Update the cookie after transformation
+          // eslint-disable-next-line no-lone-blocks
+          {
+            /* SET COOkIE LENGTH (NOT USED!!)
+          const length = productsInCookies.length;
+           Update the cookie after transformation
+          setStringifiedCookie('Length', length);*/
+          }
         }}
       >
         Add to cart

@@ -1,6 +1,4 @@
 import { cookies } from 'next/headers';
-import Image from 'next/image';
-import Link from 'next/link';
 import { getProducts } from '../../database/products';
 
 export default async function TotalAmount() {
@@ -34,24 +32,12 @@ export default async function TotalAmount() {
     return productWithAmount;
   });
 
-  // add subtotal to array out products
-  const productsWithSubtotal = productsWithAmount.map((productWithAmount) => {
-    const productsWithSubtotal = {
-      ...productWithAmount,
-      subtotal: productWithAmount.price * productWithAmount.amount,
-    };
-
-    return productsWithSubtotal;
-  });
-
-  console.log('productsWithSubtotal', productsWithSubtotal);
-
   //  const totalPricePerPlant = function calculateprice(price, amount) {
   //  return price * amount;};
   // console.log(totalPricePerPlant);
 
   // Calculate total amount
-  const totalAmount = productsWithSubtotal.reduce((prevVal, currentVal) => {
+  const totalAmount = productsWithAmount.reduce((prevVal, currentVal) => {
     return prevVal + currentVal.amount;
   }, 0);
   console.log('totalAmount', totalAmount);

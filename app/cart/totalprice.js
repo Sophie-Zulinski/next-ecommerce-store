@@ -39,7 +39,7 @@ export default async function TotalPrice() {
 
     return productsWithSubtotal;
   });
-
+  console.log('productsWithSubtotal.totalprice.js', productsWithSubtotal);
   //  const totalPricePerPlant = function calculateprice(price, amount) {
   //  return price * amount;};
   // console.log(totalPricePerPlant);
@@ -48,6 +48,6 @@ export default async function TotalPrice() {
   const totaltotal = productsWithSubtotal.reduce((prevVal, currentVal) => {
     return prevVal + currentVal.subtotal;
   }, 0);
-  console.log('totalprice', totaltotal);
+  console.log('totalprice.totalprice.js', totaltotal);
   return <div>Total price: {totaltotal} ,- €</div>;
 }

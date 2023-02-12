@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+
 import { getParsedCookie, setStringifiedCookie } from '../../utils/cookies';
 
 export default function RemoveCookie(props) {

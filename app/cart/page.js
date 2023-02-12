@@ -1,8 +1,6 @@
 import { cookies } from 'next/headers';
-import Image from 'next/image';
 import Link from 'next/link';
 import { getProducts } from '../../database/products';
-import { getParsedCookie, setStringifiedCookie } from '../../utils/cookies';
 import styles from './page.module.scss';
 import RemoveCookie from './removebutton';
 import TotalAmount from './totalamount';
