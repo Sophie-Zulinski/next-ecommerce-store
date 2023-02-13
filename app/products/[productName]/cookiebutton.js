@@ -66,13 +66,6 @@ export default function ProductsCookie(props) {
           // Update the cookie after transformation
           setStringifiedCookie('Cart', productsInCookies);
           router.refresh();
-          // eslint-disable-next-line no-lone-blocks
-          {
-            /* SET COOkIE LENGTH (NOT USED!!)
-          const length = productsInCookies.length;
-           Update the cookie after transformation
-          setStringifiedCookie('Length', length);*/
-          }
         }}
       >
         Add to cart
