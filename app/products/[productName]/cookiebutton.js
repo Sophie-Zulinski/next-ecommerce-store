@@ -1,10 +1,12 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { getParsedCookie, setStringifiedCookie } from '../../../utils/cookies';
 
 export default function ProductsCookie(props) {
-  const [amountInsert, setAmountInsert] = useState('');
+  const [amountInsert, setAmountInsert] = useState(1);
+  const router = useRouter();
   // fruitsCookie = [ {id: number, stars: number  },  ]
 
   function handlefirstChange(x) {
@@ -35,6 +37,7 @@ export default function ProductsCookie(props) {
             setStringifiedCookie('Cart', [
               { id: props.product.id, amount: parseInt(amountInsert, 10) },
             ]);
+            router.refresh();
             // if there is no cookie function stop here
             return;
           }
@@ -47,6 +50,7 @@ export default function ProductsCookie(props) {
           if (foundProduct) {
             // Add a start to the foundFruit
             foundProduct.amount++;
+            router.refresh();
             // my fruit is not inside of the cookie
           } else {
             // Add a the fruit to the array of fruits in cookies, add amountInsert
@@ -54,11 +58,12 @@ export default function ProductsCookie(props) {
               id: props.product.id,
               amount: parseInt(amountInsert, 10),
             });
+            router.refresh();
           }
           console.log('amountInsert', amountInsert);
           // Update the cookie after transformation
           setStringifiedCookie('Cart', productsInCookies);
-
+          router.refresh();
           // eslint-disable-next-line no-lone-blocks
           {
             /* SET COOkIE LENGTH (NOT USED!!)
