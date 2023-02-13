@@ -1,8 +1,9 @@
 'use client';
-
+import { useRouter } from 'next/navigation';
 import { getParsedCookie, setStringifiedCookie } from '../../utils/cookies';
 
 export default function RemoveCookie(props) {
+  const router = useRouter();
   return (
     <button
       htmlFor="data-test-id=`product-add-to-cart`"
@@ -25,6 +26,7 @@ export default function RemoveCookie(props) {
           }
           // Update the cookie after transformation
           setStringifiedCookie('Cart', productsInCookies);
+          router.refresh();
         }
       }}
     >

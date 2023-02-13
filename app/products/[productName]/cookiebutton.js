@@ -51,6 +51,8 @@ export default function ProductsCookie(props) {
             // Add a start to the foundFruit
             foundProduct.amount++;
             router.refresh();
+
+            console.log('foundProduct', foundProduct);
             // my fruit is not inside of the cookie
           } else {
             // Add a the fruit to the array of fruits in cookies, add amountInsert

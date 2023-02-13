@@ -5,6 +5,8 @@ import TotalAmount from './cart/totalamount';
 import CookieBanner from './cookiebanner';
 import styles from './layout.module.scss';
 
+export const dynamic = 'force-dynamic';
+
 export default function RootLayout({ children }) {
   /* LENGTH COOKIE START (NOT USED!!!!)
   const length = cookies().get('Length');
