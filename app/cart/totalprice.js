@@ -32,12 +32,12 @@ export default async function TotalPrice() {
 
   // add subtotal to array out products
   const productsWithSubtotal = productsWithAmount.map((productWithAmount) => {
-    const productsWithSubtotal = {
+    const productWithSubtotal = {
       ...productWithAmount,
       subtotal: productWithAmount.price * productWithAmount.amount,
     };
 
-    return productsWithSubtotal;
+    return productWithSubtotal;
   });
   console.log('productsWithSubtotal.totalprice.js', productsWithSubtotal);
   //  const totalPricePerPlant = function calculateprice(price, amount) {

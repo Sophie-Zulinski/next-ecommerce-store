@@ -40,12 +40,12 @@ export default async function Cart() {
 
   // add subtotal to array out products
   const productsWithSubtotal = productsWithAmount.map((productWithAmount) => {
-    const productsWithSubtotal = {
+    const productWithSubtotal = {
       ...productWithAmount,
       subtotal: productWithAmount.price * productWithAmount.amount,
     };
 
-    return productsWithSubtotal;
+    return productWithSubtotal;
   });
 
   // function to show ice creams subtotal only if there is this product in the cart
@@ -87,7 +87,12 @@ export default async function Cart() {
                 {/* Ternary operator to hide name if not in cart ({product.amount}?===0):(return null): return {product.name};*/}
 
                 <span> {showAmountSubtotal(product.subtotal)}</span>
-                {showButton(product.amount, <RemoveCookie product={product} />)}
+                {showButton(
+                  product.amount,
+                  <span htmlFor="data-test-id='cart-product-remove-<product id>'">
+                    <RemoveCookie product={product} />
+                  </span>,
+                )}
               </div>
             );
           })}
