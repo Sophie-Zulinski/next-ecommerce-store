@@ -9,11 +9,12 @@ export default function Checkout() {
 
       <div> Please fill out all fields*</div>
 
-      <form>
+      <form action="/thankyou" method="post">
         <input
           htmlFor="data-test-id=`checkout-first-name`"
           id="firstName"
           name="firstName"
+          maxLength="20"
           placeholder="first name"
           required
         />
@@ -22,6 +23,7 @@ export default function Checkout() {
           htmlFor="data-test-id=`checkout-last-name`"
           id="lastName"
           name="lastName"
+          maxLength="30"
           placeholder="last name"
           required
         />
@@ -30,8 +32,10 @@ export default function Checkout() {
           htmlFor="data-test-id=`checkout-email`"
           id="email"
           name="email"
-          placeholder="e-mail"
+          type="email"
           required
+          placeholder="e-mail"
+          maxLength="30"
         />
         <br />
         <input
@@ -90,10 +94,12 @@ export default function Checkout() {
           required
         />
         <br />
+
+        <button htmlFor="data-test-id=`checkout-confirm-order" type="submit">
+          Confirm order
+        </button>
       </form>
-      <button htmlFor="data-test-id=`checkout-confirm-order`">
-        <Link href="/thankyou">Confirm order</Link>
-      </button>
+
       <TotalPrice />
     </main>
   );

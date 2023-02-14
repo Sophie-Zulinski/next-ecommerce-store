@@ -3,17 +3,15 @@ import styles from './page.module.scss';
 
 export default function Home() {
   return (
-    <header>
-      <main className={styles.main}>
-        <h1>Welcome to Scoop!</h1>
+    <main className={styles.main}>
+      <h1>Welcome to Scoop!</h1>
 
-        <Image
-          src="/images/homepage.jpg"
-          alt="icecream"
-          width="900"
-          height="600"
-        />
-      </main>
-    </header>
+      <Image
+        src="/images/homepage.jpg"
+        alt="icecream"
+        width="900"
+        height="600"
+      />
+    </main>
   );
 }
