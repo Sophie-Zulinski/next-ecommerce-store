@@ -1,6 +1,6 @@
+import { config } from 'node:process';
 import { conifg } from 'dotenv-safe';
 import postgres from 'postgres';
-import { config } from 'process';
 
 config();
 const sql = postgres();
