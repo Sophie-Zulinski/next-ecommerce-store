@@ -8,16 +8,6 @@ import styles from './layout.module.scss';
 export const dynamic = 'force-dynamic';
 
 export default function RootLayout({ children }) {
-  /* LENGTH COOKIE START (NOT USED!!!!)
-  const length = cookies().get('Length');
-  console.log('length', length);
-  let lengthCookieParsed = [];
-
-  if (length) {
-    lengthCookieParsed = JSON.parse(length.value);
-  }
-  console.log('lengthCookieParsed', lengthCookieParsed);
-  // LENGTH COOKIE END */
   return (
     <html lang="en">
       <head />
@@ -28,7 +18,7 @@ export default function RootLayout({ children }) {
           <nav>
             <div>
               <Link href="/">Home</Link>
-              <Link htmlFor="data-test-id=`products-link`" href="/products">
+              <Link attribute="data-test-id=`products-link`" href="/products">
                 Choose Flavours
               </Link>
             </div>
