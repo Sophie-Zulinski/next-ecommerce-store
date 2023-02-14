@@ -13,15 +13,12 @@ ${sql(products, 'name', 'price')}
 }
 
 export async function down(sql) {
-  await sql`
-  DELETE FROM
-  products
-  WHERE
-  id = 1
-  `;
-  await sql`
-  DELETE from
-  products
-  WHERE
-  id=2`;
+  for (const product of products) {
+    await sql`
+    DELETE FROM
+    products
+    WHERE
+    id = ${product.id}
+    `;
+  }
 }
