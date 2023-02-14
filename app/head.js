@@ -1,4 +1,4 @@
-export default function RootHead() {
+export default function Home() {
   // This may change in the future
   return (
     <>
