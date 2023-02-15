@@ -18,7 +18,7 @@ export default function ProductsCookie(props) {
         {' '}
         <input
           htmlFor="data-test-id=`product-quantity`"
-          value={amountInsert}
+          value={amountInsert > 0}
           type="number"
           min="1"
           onChange={handlefirstChange}
