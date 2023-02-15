@@ -14,11 +14,11 @@ export default async function Products() {
             <div key={product.id}>
               <Link
                 attribute_name="data-test-id=`product-<product id>`"
-                href={`/products/${product.name.toLocaleLowerCase()}`}
+                href={`/products/${product.id}`}
               >
                 <h2>{product.name}</h2>
               </Link>
-              <Link href={`/products/${product.name.toLocaleLowerCase()}`}>
+              <Link href={`/products/${product.id}`}>
                 <Image
                   src={`/images/${product.name}-${product.id}.jpg`}
                   alt={product.name}

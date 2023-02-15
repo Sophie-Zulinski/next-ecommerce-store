@@ -1,5 +1,5 @@
 // import fs from 'node:fs';
-
+import { cache } from 'react';
 import { sql } from './connect';
 
 /* export const products1 = [
@@ -9,8 +9,24 @@ import { sql } from './connect';
   { id: 4, name: 'Smurf', price: 4 },
 ];*/
 
-export async function getProducts() {
+// get all animals
+export const getProducts = cache(async () => {
   const products = await sql`
-  SELECT * FROM products`;
+    SELECT * FROM products
+  `;
+
   return products;
-}
+});
+
+// get a single animal
+export const getProduct = cache(async (id) => {
+  const products = await sql`
+    SELECT
+      *
+    FROM
+      products
+    WHERE
+      id = ${id}
+  `;
+  return products[0];
+});

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { getProducts } from '../../../database/products';
+import { getProduct, getProducts } from '../../../database/products';
 import ProductsCookie from './cookiebutton';
 import styles from './page.module.scss';
 
@@ -10,13 +10,19 @@ import styles from './page.module.scss';
 // { id: 4, name: 'Poppy', price: '50' },
 //
 
+export const dynamic = 'force-dynamic';
+
 export default async function Product({ params }) {
   // this is for the database:
-  const products = await getProducts();
+  const products = await getProduct();
+
+  console.log('productspage', products);
   // this is fort the cookies:
-  const singleProduct = products.find((product) => {
-    return product.name.toLowerCase() === params.productName;
-  });
+  // const singleProduct = products.find((product) => {
+  // return product.name.toLowerCase() === params.productName;
+  // });
+
+  const singleProduct = await getProduct(params.productId);
 
   return (
     <main className={styles.main}>
