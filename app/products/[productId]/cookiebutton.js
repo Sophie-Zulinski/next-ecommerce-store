@@ -18,7 +18,7 @@ export default function ProductsCookie(props) {
         {' '}
         <input
           htmlFor="data-test-id=`product-quantity`"
-          value={amountInsert > 0}
+          value={amountInsert}
           type="number"
           min="1"
           onChange={handlefirstChange}
@@ -47,6 +47,10 @@ export default function ProductsCookie(props) {
             const foundProduct = productsInCookies.find((productInCookie) => {
               return productInCookie.id === props.product.id;
             });
+
+            if (amountInsert < 0) {
+              return Error;
+            }
 
             // my fruit is inside of the cookie
             if (foundProduct) {
