@@ -51,7 +51,8 @@ export default function ProductsCookie(props) {
             // my fruit is inside of the cookie
             if (foundProduct) {
               // Add a start to the foundFruit
-              foundProduct.amount++;
+              foundProduct.amount =
+                foundProduct.amount + parseInt(amountInsert, 10);
               router.refresh();
 
               console.log('foundProduct', foundProduct);
