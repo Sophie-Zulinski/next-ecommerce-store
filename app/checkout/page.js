@@ -93,13 +93,13 @@ export default function Checkout() {
           required
         />
         <br />
-
+        <h4>
+          <TotalPrice />
+        </h4>
         <button htmlFor="data-test-id=`checkout-confirm-order">
           Confirm order
         </button>
       </form>
-
-      <TotalPrice />
     </main>
   );
 }

@@ -100,17 +100,22 @@ export default async function Cart() {
           })}
         </div>
 
-        <h1>
+        <h3>
           Total amount of scoops: <TotalAmount />
-        </h1>
+        </h3>
         {/* <RemoveCookie product={totalAmount} /> */}
         {console.log(typeof totalAmount)}
-        <h1 htmlFor="data-test-id=`cart-total`">
+        <h3 htmlFor="data-test-id=`cart-total`">
           <TotalPrice />
-        </h1>
-        <button htmlFor="data-test-id=`cart-checkout`">
-          <Link href="/checkout">Checkout</Link>
-        </button>
+        </h3>
+        <form action="/checkout" method="post">
+          <button
+            className={styles.Link}
+            htmlFor="data-test-id=`cart-checkout`"
+          >
+            Checkout
+          </button>
+        </form>
       </main>
     </div>
   );

@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function Thankyou() {
   return (
     <main className="paper container">
-      <h1>Thank you for shopping at Scoop!</h1>
+      <h2>Thank you for shopping at Scoop!</h2>
       <Image
         src="/images/homepage.jpg"
         alt="icecream"

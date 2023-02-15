@@ -27,13 +27,10 @@ export default async function Product({ params }) {
   return (
     <main className={styles.main}>
       <h1>{singleProduct.name}</h1>
-
       <div htmlFor="data-test-id=`product-price`">
         Price: {singleProduct.price},- €
       </div>
       <ProductsCookie product={singleProduct} />
-      <br />
-
       <Image
         htmlFor="data-test-id=`product-image`"
         src={`/images/${singleProduct.name}-${singleProduct.id}.jpg`}
