@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
       <head />
       <link
         rel="stylesheet"
-        href="https://unpkg.com/papercss@1.9.1/dist/paper.min.css"
+        href="https://unpkg.com/papercss@1.9.1/dist/paper.css"
       />
       <body className="paper container">
         <header className={styles.header}>
