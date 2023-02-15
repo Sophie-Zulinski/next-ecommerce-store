@@ -103,7 +103,7 @@ export default async function Cart() {
         <h3>
           Total amount of scoops: <TotalAmount />
         </h3>
-        {/* <RemoveCookie product={totalAmount} /> */}
+
         {console.log(typeof totalAmount)}
         <h3 htmlFor="data-test-id=`cart-total`">
           <TotalPrice />

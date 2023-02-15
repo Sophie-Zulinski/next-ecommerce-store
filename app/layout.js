@@ -9,7 +9,7 @@ export const dynamic = 'force-dynamic';
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={styles.html}>
       <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,6 +20,7 @@ export default function RootLayout({ children }) {
           href="https://unpkg.com/papercss@1.9.1/dist/paper.min.css"
         />
       </head>
+
       <body className="paper container">
         <header className={styles.header}>
           <CookieBanner />
