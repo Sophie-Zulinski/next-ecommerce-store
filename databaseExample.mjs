@@ -1,5 +1,4 @@
 import { config } from 'node:process';
-import { conifg } from 'dotenv-safe';
 import postgres from 'postgres';
 
 config();

@@ -11,7 +11,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head />
-      <body>
+      <link
+        rel="stylesheet"
+        href="https://unpkg.com/papercss@1.9.1/dist/paper.min.css"
+      />
+      <body className="paper container">
         <header className={styles.header}>
           <CookieBanner />
 

@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Thankyou() {
   return (
-    <main>
+    <main className="paper container">
       <h1>Thank you for shopping at Scoop!</h1>
       <Image
         src="/images/homepage.jpg"
