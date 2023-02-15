@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { getProduct, getProducts } from '../../../database/products';
+import { getProduct } from '../../../database/products';
 import ProductsCookie from './cookiebutton';
 import styles from './page.module.scss';
 

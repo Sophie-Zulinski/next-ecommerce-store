@@ -90,7 +90,7 @@ export default async function Cart() {
                 <span> {showAmountSubtotal(product.subtotal)}</span>
                 {showButton(
                   product.amount,
-                  <span htmlFor="data-test-id='cart-product-quantity-<product id>'">
+                  <span htmlFor="data-test-id='cart-product-remove-<product id>'">
                     {' '}
                     <RemoveCookie product={product} />
                   </span>,

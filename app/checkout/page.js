@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import TotalPrice from '../cart/totalprice';
 import styles from './page.module.scss';
 
@@ -95,7 +94,7 @@ export default function Checkout() {
         />
         <br />
 
-        <button htmlFor="data-test-id=`checkout-confirm-order" type="submit">
+        <button htmlFor="data-test-id=`checkout-confirm-order">
           Confirm order
         </button>
       </form>

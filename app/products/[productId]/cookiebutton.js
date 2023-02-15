@@ -19,6 +19,7 @@ export default function ProductsCookie(props) {
         htmlFor="data-test-id=`product-quantity`"
         value={amountInsert}
         type="number"
+        min="0"
         onChange={handlefirstChange}
         id={amountInsert}
         placeholder="Insert Quantity"
