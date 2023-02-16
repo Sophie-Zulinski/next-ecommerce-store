@@ -3,6 +3,11 @@ import Link from 'next/link';
 import { getProducts } from '../../database/products';
 import styles from './page.module.scss';
 
+export const metadata = {
+  title: 'Products',
+  description: 'Products page',
+};
+
 export default async function Products() {
   const products = await getProducts();
   return (

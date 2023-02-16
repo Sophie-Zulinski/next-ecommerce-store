@@ -3,7 +3,8 @@ export default function Products() {
   return (
     <>
       <title>Products</title>
-      <meta name="products" content="products" />
+      <meta name="description" content="This is Sophie's page" />
+      <link rel="icon" href="/favicon.ico" />
     </>
   );
 }
