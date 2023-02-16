@@ -34,12 +34,6 @@ export default function RootLayout({ children }) {
             </div>
             {/* <div>{lengthCookieParsed}</div>*/}
             <div className={styles.cart}>
-              <span
-                htmlFor="data-test-id=`cart-count`"
-                className={styles.amount}
-              >
-                <TotalAmount />
-              </span>
               <Link htmlFor="data-test-id=`cart-link`" href="/cart">
                 {' '}
                 <Image
@@ -49,7 +43,12 @@ export default function RootLayout({ children }) {
                   height="30"
                 />
               </Link>
-              <Link href="/checkout">Checkout</Link>
+              <span
+                htmlFor="data-test-id=`cart-count`"
+                className={styles.amount}
+              >
+                <TotalAmount />
+              </span>
             </div>
           </nav>
         </header>
