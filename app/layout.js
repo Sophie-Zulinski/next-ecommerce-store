@@ -28,13 +28,13 @@ export default function RootLayout({ children }) {
           <nav>
             <div>
               <Link href="/">Home</Link>
-              <Link data-test-id="products-link" href="/products">
+              <Link href="/products" data-test-id="products-link">
                 Choose Flavours
               </Link>
             </div>
             {/* <div>{lengthCookieParsed}</div>*/}
             <div className={styles.cart}>
-              <Link data-test-id="cart-link" href="/cart">
+              <Link href="/cart" data-test-id="cart-link">
                 {' '}
                 <Image
                   src="/images/cart.png"
