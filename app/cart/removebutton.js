@@ -6,7 +6,7 @@ export default function RemoveCookie(props) {
   const router = useRouter();
   return (
     <button
-      htmlFor="data-test-id=`product-add-to-cart`"
+      data-test-id="cart-product-remove-<product id>"
       onClick={() => {
         // get the cookie
         const productsInCookies = getParsedCookie('Cart');

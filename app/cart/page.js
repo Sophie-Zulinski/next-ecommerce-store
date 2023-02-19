@@ -75,11 +75,11 @@ export default async function Cart() {
       <main className={styles.main}>
         <h1>Cart</h1>
 
-        <div htmlFor="data-test-id='cart-product-<product id>'">
+        <div data-test-id="cart-product-<product id>">
           {productsWithSubtotal.map((product) => {
             return (
               <div key={product.id}>
-                <span htmlFor="data-test-id='cart-product-quantity-<product id>'">
+                <span data-test-id="cart-product-quantity-<product id>">
                   {' '}
                   {showAmount(product.amount, product.name, product.price)}
                 </span>
@@ -89,7 +89,7 @@ export default async function Cart() {
                 <span> {showAmountSubtotal(product.subtotal)}</span>
                 {showButton(
                   product.amount,
-                  <span htmlFor="data-test-id='cart-product-remove-<product id>'">
+                  <span data-test-id="cart-product-remove-<product id>">
                     {' '}
                     <RemoveCookie product={product} />
                   </span>,
@@ -104,14 +104,11 @@ export default async function Cart() {
         </h3>
 
         {console.log(typeof totalAmount)}
-        <h3 htmlFor="data-test-id=`cart-total`">
+        <h3 data-test-id="cart-total">
           <TotalPrice />
         </h3>
         <form action="/checkout" method="post">
-          <button
-            className={styles.Link}
-            htmlFor="data-test-id=`cart-checkout`"
-          >
+          <button className={styles.Link} data-test-id="cart-checkout">
             Checkout
           </button>
         </form>

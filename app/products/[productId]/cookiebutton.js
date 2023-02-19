@@ -17,7 +17,7 @@ export default function ProductsCookie(props) {
       <form method="post">
         {' '}
         <input
-          htmlFor="data-test-id=`product-quantity`"
+          data-test-id="product-quantity"
           value={amountInsert}
           type="number"
           min="1"
@@ -27,7 +27,7 @@ export default function ProductsCookie(props) {
           required
         />
         <button
-          htmlFor="data-test-id=`product-add-to-cart`"
+          data-test-id="product-add-to-cart"
           onClick={() => {
             // get the cookie
             const productsInCookies = getParsedCookie('Cart');

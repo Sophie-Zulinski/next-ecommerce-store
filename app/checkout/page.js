@@ -10,7 +10,7 @@ export default function Checkout() {
 
       <form action="/thankyou" method="post">
         <input
-          htmlFor="data-test-id=`checkout-first-name`"
+          data-test-id="checkout-first-name"
           id="firstName"
           name="firstName"
           maxLength="20"
@@ -19,7 +19,7 @@ export default function Checkout() {
         />
         <br />
         <input
-          htmlFor="data-test-id=`checkout-last-name`"
+          data-test-id="checkout-last-name"
           id="lastName"
           name="lastName"
           maxLength="30"
@@ -28,7 +28,7 @@ export default function Checkout() {
         />
         <br />
         <input
-          htmlFor="data-test-id=`checkout-email`"
+          data-test-id="checkout-email"
           id="email"
           name="email"
           type="email"
@@ -38,7 +38,7 @@ export default function Checkout() {
         />
         <br />
         <input
-          htmlFor="data-test-id=`checkout-address`"
+          data-test-id="checkout-address"
           id="address"
           name="address"
           placeholder="adress"
@@ -46,7 +46,7 @@ export default function Checkout() {
         />
         <br />
         <input
-          htmlFor="data-test-id=`checkout-city`"
+          data-test-id="checkout-city"
           id="city"
           name="city"
           placeholder="city"
@@ -54,7 +54,7 @@ export default function Checkout() {
         />
         <br />
         <input
-          htmlFor="data-test-id=`postal code`"
+          data-test-id="postal code"
           id="postal code"
           name="postal code"
           placeholder="postal code"
@@ -62,7 +62,7 @@ export default function Checkout() {
         />
         <br />
         <input
-          htmlFor="data-test-id=`country`"
+          data-test-id="country"
           id="country"
           name="country"
           placeholder="country"
@@ -70,7 +70,7 @@ export default function Checkout() {
         />
         <br />
         <input
-          htmlFor="data-test-id=`credit-card`"
+          data-test-id="credit-card"
           id="credit-card"
           name="credit-card"
           placeholder="credit-card"
@@ -78,7 +78,7 @@ export default function Checkout() {
         />
         <br />
         <input
-          htmlFor="data-test-id=`checkout-expiration-date`"
+          data-test-id="checkout-expiration-date"
           id="expiration-date"
           name="expiration-date"
           placeholder="expiration-date"
@@ -86,7 +86,7 @@ export default function Checkout() {
         />
         <br />
         <input
-          htmlFor="data-test-id=`checkout-security-code`"
+          data-test-id="checkout-security-code"
           id="security-code"
           name="security-code"
           placeholder="security-code"
@@ -96,9 +96,7 @@ export default function Checkout() {
         <h4>
           <TotalPrice />
         </h4>
-        <button htmlFor="data-test-id=`checkout-confirm-order">
-          Confirm order
-        </button>
+        <button data-test-id="checkout-confirm-order">Confirm order</button>
       </form>
     </main>
   );

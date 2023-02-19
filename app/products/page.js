@@ -18,7 +18,7 @@ export default async function Products() {
           return (
             <div key={product.id}>
               <Link
-                attribute_name="data-test-id=`product-<product id>`"
+                data-test-id="product-<product id>"
                 href={`/products/${product.id}`}
               >
                 <h4>{product.name}</h4>

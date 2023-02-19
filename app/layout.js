@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
           <nav>
             <div>
               <Link href="/">Home</Link>
-              <Link href="/products" data-test-id="products-link">
+              <Link href="/products" header data-test-id="products-link">
                 Choose Flavours
               </Link>
             </div>
