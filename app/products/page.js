@@ -12,7 +12,7 @@ export default async function Products() {
   const products = await getProducts();
   return (
     <>
-      <h2>Flavours</h2>
+      <h1>Flavours</h1>
       <main className={styles.main}>
         {products.map((product) => {
           return (
