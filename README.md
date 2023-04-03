@@ -1,4 +1,4 @@
-# E-Commerce Store "Scoop"
+# E-Commerce store "Scoop"
 
 ## Description:
 
